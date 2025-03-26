@@ -61,6 +61,15 @@ Use npx tsx instead by running the following command:
 - `npm init -y`: to record a project's dependencies inside of a json file
 - `npm i axios`
 
+**<span style='color: #ffdf90'>IMPORTANT:** we cannot run typescript code inside the browser or with node.js, we have to first compile the file(s) into plain javascript.
+
+- `tsc index.ts` to compile our typescript file
+- `node index.js` to run the created `.js` file
+
+**<span style='color: #bbffff'> Note:** to avoid running `tsc` command all the time, you can use this alternative
+
+- `npm install --save-dev @types/node` & `npm install --save-dev tsx`
+- `npx tsx index.ts`
 <!---
 [comment]: it works with text, you can rename it how you want
 
