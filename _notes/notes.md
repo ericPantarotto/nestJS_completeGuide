@@ -2,6 +2,14 @@
 <!-- markdownlint-disable MD024 -->
 # **<span style='color: #6e7a73'>NestJS: The complete developer's guide**
 
+## **<span style='color: #6e7a73'>Generic Comments**
+
+### **<span style='color: #6e7a73'>Eslint**
+
+**<span style='color: #ffc5a6'>Eslint - getting started:** [https://eslint.org/docs/latest/use/getting-started]
+
+`npm init @eslint/config@latest`
+
 ## **<span style='color: #6e7a73'>[Bonus] Appendix: TypeScript**
 
 ### **<span style='color: #6e7a73'>TypeScript Overview**
@@ -70,6 +78,14 @@ Use npx tsx instead by running the following command:
 
 - `npm install --save-dev @types/node` & `npm install --save-dev tsx`
 - `npx tsx index.ts`
+
+### **<span style='color: #6e7a73'>Catching Errors with TypeScript**
+
+in an `interface` you can ignore properties
+
+As soon as we apply our interface to our response object, **Typescript detects error, during development**, inside the code editor, well before we compiled our code, or tested/ran it. That's the power of typescript and what it's all about!
+
+![image info](./0_sc5.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
@@ -81,6 +97,8 @@ Use npx tsx instead by running the following command:
 **<span style='color: #ffb3b3'>Error:**
 **<span style='color: #b0ffb6'> TabButton.jsx**
 **<span style='color: #f3b4ff'> Copilot**
+
+**<span style='color: #6e7a73'> Section**
 
 <ins>text to underline</ins>
 

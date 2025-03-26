@@ -2,11 +2,19 @@ import axios from 'axios';
 
 const url = 'https://jsonplaceholder.typicode.com/todos/1';
 
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
 axios.get(url).then((response) => {
-  // console.log(response.data);
-  const { ID, Title, finished } = response.data;
+
+  const { id, title, completed } = response.data as Todo;
+
   console.log(`
-    The Todo with ID: ${ID}
-    Has a title of: ${Title}
-    Is it finished? ${finished}`);
+    The Todo with ID: ${id}
+    Has a title of: ${title}
+    Is it finished? ${completed}`);
 });
+
