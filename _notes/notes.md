@@ -38,6 +38,23 @@ from a terminal, in any location, you can open vscode with `code .` once you add
 
 from Settings / prettier: single quote + Settings / Editor: Tab Size
 
+### **<span style='color: #6e7a73'>Important Update About ts-node and Axios**
+
+In the upcoming lecture, we will be installing axios to use in our demo project. To use the latest versions of axios, we need to install the **@types/node** library:
+
+`npm install --save-dev @types/node`
+
+Also, Typescript 5.6 introduced some breaking changes related to imports. ts-node is currently not in sync with this since it has not seen an update since 2023.
+
+In place of ts-node, you will need to use a different library to execute TS code throughout this course.
+
+Instead of running the command as shown in the videos:
+
+`ts-node index.ts`
+
+Use npx tsx instead by running the following command:
+
+`npx tsx index.ts`
 <!---
 [comment]: it works with text, you can rename it how you want
 
