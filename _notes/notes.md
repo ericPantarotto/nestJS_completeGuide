@@ -55,6 +55,12 @@ Instead of running the command as shown in the videos:
 Use npx tsx instead by running the following command:
 
 `npx tsx index.ts`
+
+### **<span style='color: #6e7a73'>A first app**
+
+- `npm init -y`: to record a project's dependencies inside of a json file
+- `npm i axios`
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
