@@ -86,6 +86,15 @@ in an `interface` you can ignore properties
 As soon as we apply our interface to our response object, **Typescript detects error, during development**, inside the code editor, well before we compiled our code, or tested/ran it. That's the power of typescript and what it's all about!
 
 ![image info](./0_sc5.png)
+
+### **<span style='color: #6e7a73'>Types**
+
+Type:  easy way to refer to the different properties and functions that a value has
+
+"red":
+
+- it is a string
+- it is a value that has all the properties + methods that we assume a string has
 <!---
 [comment]: it works with text, you can rename it how you want
 
