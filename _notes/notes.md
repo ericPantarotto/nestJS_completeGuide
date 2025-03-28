@@ -24,7 +24,7 @@ Typescript = Javascript + **a type system**
 - once the app is deployed or before that run in a browser in a development environment/server, the entire *type system* goes away, the browser and Node.js don't know what Typescript is
 - so all the extra syntax added to our code never makes it to the browser nor Node.js
 - the typescript compiler compiles the typescript code and produces javascript code, which is what is executed
-- unlike other strongly typed languages,  typescrypt compiler doesn't do any performance optimization
+- unlike other strongly typed languages,  typescript compiler doesn't do any performance optimization
 
 ![image info](./0_sc2.png)
 
@@ -106,6 +106,9 @@ Type:  easy way to refer to the different properties and functions that a value 
 
 ![image info](./0_sc6.png)
 
+### **<span style='color: #6e7a73'>Examples of Types**
+
+the whole point of types: it is a shortcut to say here are the different properties and methods that this value right here has.
 <!---
 [comment]: it works with text, you can rename it how you want
 
