@@ -109,6 +109,10 @@ Type:  easy way to refer to the different properties and functions that a value 
 ### **<span style='color: #6e7a73'>Examples of Types**
 
 the whole point of types: it is a shortcut to say here are the different properties and methods that this value right here has.
+
+### **<span style='color: #6e7a73'>Type Annotations and Inference**
+
+![image info](./0_sc7.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
