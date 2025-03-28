@@ -95,6 +95,17 @@ Type:  easy way to refer to the different properties and functions that a value 
 
 - it is a string
 - it is a value that has all the properties + methods that we assume a string has
+
+### **<span style='color: #6e7a73'>More on Types**
+
+- string
+- date
+- boolean
+- number
+- other types defined in an interface, or built-in the language itself
+
+![image info](./0_sc6.png)
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
