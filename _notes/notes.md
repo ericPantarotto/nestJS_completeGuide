@@ -124,6 +124,13 @@ const logNumber: (i: number) => void = (i: number) => {
 };
 ```
 
+**<span style='color: #ffdf90'>IMPORTANT:** if we go to our `variables.ts` and delete all the annotations for each value, our code editor will not show any error, this is because of *type inference*, where Typescript guesses the type itself.
+
+### **<span style='color: #6e7a73'> Understanding Inference**
+  
+![image info](./0_sc8.png)
+
+![image info](./0_sc9.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
