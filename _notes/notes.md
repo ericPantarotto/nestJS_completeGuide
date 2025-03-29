@@ -131,6 +131,25 @@ const logNumber: (i: number) => void = (i: number) => {
 ![image info](./0_sc8.png)
 
 ![image info](./0_sc9.png)
+
+### **<span style='color: #6e7a73'>The Any type**
+
+`JSON.parse(...);` is a function that returns `any`
+
+![image info](./0_sc10.png)
+
+**<span style='color: #bbffff'> Note:**
+
+- TypeScript doesn't know what we're going to get out of `json.parse()` because it depends entirely on the string that we put into that function.
+- in the code editor and we call Json.parse(), TypeScript just can't predict what we get back from the function because it will be entirely different based upon the string that we put in.
+- So as a shortcut, TypeScript instead decides to simply say, it's not possible to guess all these different types and you get back back the `any` type.
+- The `any` type essentially means that TypeScript has no idea what type of value is being returned from a function.
+
+![image info](./0_sc11.png)
+
+**<span style='color: #ffdf90'>IMPORTANT:** in general, that is a very bad thing to have `any` inside of our application. Remember the entire idea behind TypeScript is that we are using TypeScript to catch errors inside of our code editor and we're able to do that because of types.
+
+**any time we have a variable of type, any, it is generally a bad thing because TypeScript can't do its job.**
 <!---
 [comment]: it works with text, you can rename it how you want
 
