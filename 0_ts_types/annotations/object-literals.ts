@@ -21,3 +21,9 @@ const point: { x: number; y: number } = {
 
 console.log(point.x); // 10
 console.log(point.y); // 20
+
+// Function
+const logNumber: (i: number) => void = (i: number) => {
+  console.log(i);
+};
+logNumber(5); // 5

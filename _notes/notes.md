@@ -113,6 +113,17 @@ the whole point of types: it is a shortcut to say here are the different propert
 ### **<span style='color: #6e7a73'>Type Annotations and Inference**
 
 ![image info](./0_sc7.png)
+
+### **<span style='color: #6e7a73'> Annotations around Functions**
+
+`(i: number) => void`, even though it looks like a function, there is no code invoked, it is a description of a function, we are not calling a function.
+
+```typescript
+const logNumber: (i: number) => void = (i: number) => {
+  console.log(i);
+};
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
