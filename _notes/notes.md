@@ -150,6 +150,16 @@ const logNumber: (i: number) => void = (i: number) => {
 **<span style='color: #ffdf90'>IMPORTANT:** in general, that is a very bad thing to have `any` inside of our application. Remember the entire idea behind TypeScript is that we are using TypeScript to catch errors inside of our code editor and we're able to do that because of types.
 
 **any time we have a variable of type, any, it is generally a bad thing because TypeScript can't do its job.**
+
+### **<span style='color: #6e7a73'>More annotations around functions**
+
+```typescript
+const logNumber: (i: number) => void = (i: number) => {
+  console.log(i);
+};
+```
+
+The above annotation is an annotation for the variable. We were telling TypeScript, we're going to assign a value to this variable that's going to have this type.
 <!---
 [comment]: it works with text, you can rename it how you want
 
