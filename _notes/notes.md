@@ -160,6 +160,20 @@ const logNumber: (i: number) => void = (i: number) => {
 ```
 
 The above annotation is an annotation for the variable. We were telling TypeScript, we're going to assign a value to this variable that's going to have this type.
+
+### **<span style='color: #6e7a73'>Inference around functions**
+
+![image info](./0_sc12.png)
+
+**<span style='color: #bbffff'> Note:** If I now hover over the function, we see an annotation on the variable itself that says the function returns a number. So that's type inference in play. We did not add in a type return annotation, but TypeScript read the body of our function and it knows that we are going to return a number.
+
+So just like we saw with inference before, with variable declarations, we have type inference around only the return value from a function.
+
+![image info](./0_sc12.png)
+
+**<span style='color: #ffdf90'>IMPORTANT:** So we don't have to add in that return annotation if we don't want to. However, you and I **always will**.
+
+**<span style='color: #ffb3b3'>Error:** we are always going to use return annotations. It's because we could very easily make a mistake inside of a function and forget to return a value or even return an incorrect type.
 <!---
 [comment]: it works with text, you can rename it how you want
 
