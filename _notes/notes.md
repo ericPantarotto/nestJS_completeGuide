@@ -176,6 +176,24 @@ So just like we saw with inference before, with variable declarations, we have t
 **<span style='color: #ffb3b3'>Error:** we are always going to use return annotations. It's because we could very easily make a mistake inside of a function and forget to return a value or even return an incorrect type.
 
 we only annotate a function with the type `never` when we really truly never expect a function to return anything ever, if we at least expect it to return something eventually and only possibly throw an error, that's totally fine, We're still going to annotate it with whatever we expect it to eventually return.
+
+### **<span style='color: #6e7a73'>Destructuring with Annotations**
+
+The destructuring portion and the annotation are always going to be the two separate statements separated by that colon `:`
+
+```typescript
+const logWeatherDestruct = ({
+  date,
+  weather,
+}: {
+  date: Date;
+  weather: string;
+}): void => {
+  console.log(date);
+  console.log(weather);
+};
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
