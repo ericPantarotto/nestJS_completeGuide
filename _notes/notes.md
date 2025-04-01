@@ -169,7 +169,7 @@ The above annotation is an annotation for the variable. We were telling TypeScri
 
 So just like we saw with inference before, with variable declarations, we have type inference around only the return value from a function.
 
-![image info](./0_sc12.png)
+![image info](./0_sc13.png)
 
 **<span style='color: #ffdf90'>IMPORTANT:** So we don't have to add in that return annotation if we don't want to. However, you and I **always will**.
 
@@ -199,6 +199,10 @@ const logWeatherDestruct = ({
 `const carsByMake = [['f150'], ['corolla'], ['camaro']];`
 
 **<span style='color: #bbffff'> Note:** you only need the `string[][]` syntax to initialize an empty nested array `const carsByMake: string[][] = [];`
+
+### **<span style='color: #6e7a73'>Why typed arrays**
+
+![image info](./0_sc14.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
