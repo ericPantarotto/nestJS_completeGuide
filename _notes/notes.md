@@ -194,6 +194,11 @@ const logWeatherDestruct = ({
 };
 ```
 
+### **<span style='color: #6e7a73'>Arrays in Typescript**
+
+`const carsByMake = [['f150'], ['corolla'], ['camaro']];`
+
+**<span style='color: #bbffff'> Note:** you only need the `string[][]` syntax to initialize an empty nested array `const carsByMake: string[][] = [];`
 <!---
 [comment]: it works with text, you can rename it how you want
 
