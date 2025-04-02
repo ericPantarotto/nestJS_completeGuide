@@ -213,6 +213,15 @@ const logWeatherDestruct = ({
 **<span style='color: #bbffff'> Note:** A tuple: Array-like structure where each element represents some property of a record.
 
 Remember that the order of the elements inside of a tuple has a specific meaning
+
+### **<span style='color: #6e7a73'>Why Tuples**
+
+Most notably, if you're ever working with a CSV file and you want to represent a single row, you might reach out to a tuple.
+
+**<span style='color: #ffdf90'>IMPORTANT:**
+
+- if we use a tuple to represent some meaningful data, it's really hard to look at tuple values and understand what they are describing. However, in an **object format, because we are forced to put in a key, it is immediately obvious what we are working with.**
+- anytime we want to model a record or record it in our application, somehow we're going to stick with a JavaScript convention of reaching for an object as opposed to a tuple.
 <!---
 [comment]: it works with text, you can rename it how you want
 
