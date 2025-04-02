@@ -27,3 +27,12 @@ const newCars = carMakers.map(
   }
 );
 console.log(newCars);
+
+// Flexible types
+const importantDates: (Date | string)[] = [new Date(), '2030-10-10'];
+importantDates.push('2030-10-11');
+console.log(importantDates);
+//NOTE: This is an array that can contain both Date objects and strings.
+//NOTE: The type (Date | string)[] means that each element in the array can be either a Date object or a string.
+//NOTE: This is useful when you want to allow multiple types of values in the same array.
+//NOTE: The importantDates array is initialized with a Date object and a string.

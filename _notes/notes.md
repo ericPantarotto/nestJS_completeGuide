@@ -203,6 +203,10 @@ const logWeatherDestruct = ({
 ### **<span style='color: #6e7a73'>Why typed arrays**
 
 ![image info](./0_sc14.png)
+
+### **<span style='color: #6e7a73'>Multiple types in arrays**
+
+**<span style='color: #ffdf90'>IMPORTANT:** we want as much as possible to avoid the `any` type, that's also the case for arrays, hence `const myDates: [] = []` yielding a type `any` should be avoided.
 <!---
 [comment]: it works with text, you can rename it how you want
 
