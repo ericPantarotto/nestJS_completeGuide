@@ -210,7 +210,9 @@ const logWeatherDestruct = ({
 
 ### **<span style='color: #6e7a73'>Tuples in Typescript**
 
-**<span style='color: #bbffff'> Note:** A tuple: Array-like structure where each element represents some property of a record
+**<span style='color: #bbffff'> Note:** A tuple: Array-like structure where each element represents some property of a record.
+
+Remember that the order of the elements inside of a tuple has a specific meaning
 <!---
 [comment]: it works with text, you can rename it how you want
 
