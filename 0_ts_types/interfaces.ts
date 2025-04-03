@@ -20,6 +20,15 @@ const oldCivic = {
   },
 };
 
+const drink = {
+  color: 'brown',
+  carbonated: true,
+  sugar: 40,
+  summary(): string {
+    return `My drink has ${this.sugar} grams of sugar`;
+  },
+};
+
 // const printVehicle = (vehicle: {
 //   name: string;
 //   year: number;
@@ -37,12 +46,18 @@ const printVehicle = (vehicle: Vehicle): void => {
   console.log(`Summary: ${vehicle.summary()}`);
 };
 
-const printVehicleReportable = (vehicle: Reportable): void => {
-  console.log(`Summary: ${vehicle.summary()}`);
+// const printVehicleReportable = (vehicle: Reportable): void => {
+//   console.log(`Summary: ${vehicle.summary()}`);
+// };
+const printSummary = (item: Reportable): void => {
+  console.log(`Summary: ${item.summary()}`);
 };
 
 console.log('------------------ Vehicle interface ------------------');
 printVehicle(oldCivic);
-console.log('------------------ Reportable interface ------------------');
-
-printVehicleReportable(oldCivic);
+console.log('\r\n------------------ Reportable interface ------------------');
+printSummary(oldCivic);
+console.log(
+  '\r\n------------------ Reportable interface - Drink ------------------'
+);
+printSummary(drink);

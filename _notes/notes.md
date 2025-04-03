@@ -249,6 +249,14 @@ const printVehicle = (vehicle: {
 ### **<span style='color: #6e7a73'>Functions In Interfaces**
 
 **<span style='color: #bbffff'> Note:** In Typescript you can pass additional properties / functions than what the interface requires
+
+### **<span style='color: #6e7a73'>Code Reuse with Interfaces**
+
+The two objects `civic` and `drink` represent very different things inside of our application, but they both have a `summary` function that returns a *string*. That means that they are both considered to be of `reportable` type. Because they are both of type reportable, we can use both old civic and drink with the function.
+
+**<span style='color: #ffdf90'>IMPORTANT:** The point is that we can use a single interface to describe the shape or the different properties of very different objects. we can make these very different objects, interact with different functions that we create, like `printSummary`.
+
+**So this encourages us to write somewhat generic looking functions.**
 <!---
 [comment]: it works with text, you can rename it how you want
 
