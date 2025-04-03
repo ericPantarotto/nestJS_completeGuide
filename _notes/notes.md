@@ -257,6 +257,10 @@ The two objects `civic` and `drink` represent very different things inside of ou
 **<span style='color: #ffdf90'>IMPORTANT:** The point is that we can use a single interface to describe the shape or the different properties of very different objects. we can make these very different objects, interact with different functions that we create, like `printSummary`.
 
 **So this encourages us to write somewhat generic looking functions.**
+
+### **<span style='color: #6e7a73'>General plan with Interfaces**
+
+![image info](./0_sc15.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
