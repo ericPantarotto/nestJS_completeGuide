@@ -222,6 +222,22 @@ Most notably, if you're ever working with a CSV file and you want to represent a
 
 - if we use a tuple to represent some meaningful data, it's really hard to look at tuple values and understand what they are describing. However, in an **object format, because we are forced to put in a key, it is immediately obvious what we are working with.**
 - anytime we want to model a record or record it in our application, somehow we're going to stick with a JavaScript convention of reaching for an object as opposed to a tuple.
+
+### **<span style='color: #6e7a73'>Long Type Annotations**
+
+```typescript
+const printVehicle = (vehicle: {
+  name: string;
+  year: number;
+  broken: boolean;
+}): void => {
+  console.log(`Name: ${vehicle.name}`);
+  console.log(`Year: ${vehicle.year}`);
+  console.log(`Broken: ${vehicle.broken}`);
+};
+```
+
+**<span style='color: #bbffff'> Note:** this type annotation is really long and hard to read. and if we another function that would take the same parameter, we would then have to duplicate the whole annotation.
 <!---
 [comment]: it works with text, you can rename it how you want
 
