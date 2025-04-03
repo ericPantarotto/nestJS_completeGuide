@@ -239,10 +239,16 @@ const printVehicle = (vehicle: {
 
 **<span style='color: #bbffff'> Note:** this type annotation is really long and hard to read. and if we another function that would take the same parameter, we would then have to duplicate the whole annotation.
 
+### **<span style='color: #6e7a73'>Syntax Around Interfaces**
+
 **<span style='color: #bbffff'> Note:** We are not only limited to expressing primitive values inside of an interface, we can instead express any different type we want to inside of an interface,
 
 - like for example replacing a number by an instance of a date,
 - or a function
+
+### **<span style='color: #6e7a73'>Functions In Interfaces**
+
+**<span style='color: #bbffff'> Note:** In Typescript you can pass additional properties / functions than what the interface requires
 <!---
 [comment]: it works with text, you can rename it how you want
 
