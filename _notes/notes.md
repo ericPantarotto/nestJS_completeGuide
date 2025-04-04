@@ -270,6 +270,21 @@ Classes: Blueprint to create an object with some fields (values) and methods (fu
 
 When we have a class that extends another, we can optionally choose to override different methods.
 
+### **<span style='color: #6e7a73'>Class Method modifiers**
+
+modifiers restrict access to different functions & variables, the default value is `public`
+
+![image info](./0_sc16.png)
+
+#### private
+
+**<span style='color: #ffb3b3'>Error:**
+
+![image info](./0_sc16.png)
+
+when you assign `private` this function can only be called inside the class by other functions of the class itself.
+
+**<span style='color: #ffb3b3'>Error:** f the child class has a different modifier than its parent class, if in a child class you override a method, you're not authorized to change its modifier.
 <!---
 [comment]: it works with text, you can rename it how you want
 
