@@ -285,6 +285,21 @@ modifiers restrict access to different functions & variables, the default value 
 when you assign `private` this function can only be called inside the class by other functions of the class itself.
 
 **<span style='color: #ffb3b3'>Error:** f the child class has a different modifier than its parent class, if in a child class you override a method, you're not authorized to change its modifier.
+
+### **<span style='color: #6e7a73'>Field in Classes**
+
+`constructor(public color: string) {}` is a short version for below:
+
+```typescript
+class abc {
+  color: string;
+  constructor(color: string){
+    this.color = color;
+  }
+}
+```
+
+**<span style='color: #bbffff'> Note:** Modifiers apply to class variable just as they do for methods.
 <!---
 [comment]: it works with text, you can rename it how you want
 
