@@ -265,6 +265,11 @@ The two objects `civic` and `drink` represent very different things inside of ou
 ### **<span style='color: #6e7a73'>Classes**
 
 Classes: Blueprint to create an object with some fields (values) and methods (functions) to represent something
+
+### **<span style='color: #6e7a73'>Basic Inheritance**
+
+When we have a class that extends another, we can optionally choose to override different methods.
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
