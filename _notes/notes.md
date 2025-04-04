@@ -300,6 +300,10 @@ class abc {
 ```
 
 **<span style='color: #bbffff'> Note:** Modifiers apply to class variable just as they do for methods.
+
+### **<span style='color: #6e7a73'>Fields with inheritance**
+
+If a child class has no constructor, then Typescript will execute the constructor of the parent.
 <!---
 [comment]: it works with text, you can rename it how you want
 
