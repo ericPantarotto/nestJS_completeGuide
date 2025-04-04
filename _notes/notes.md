@@ -261,6 +261,10 @@ The two objects `civic` and `drink` represent very different things inside of ou
 ### **<span style='color: #6e7a73'>General plan with Interfaces**
 
 ![image info](./0_sc15.png)
+
+### **<span style='color: #6e7a73'>Classes**
+
+Classes: Blueprint to create an object with some fields (values) and methods (functions) to represent something
 <!---
 [comment]: it works with text, you can rename it how you want
 
