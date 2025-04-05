@@ -304,6 +304,15 @@ class abc {
 ### **<span style='color: #6e7a73'>Fields with inheritance**
 
 If a child class has no constructor, then Typescript will execute the constructor of the parent.
+
+### **<span style='color: #6e7a73'>Setting up Maps project**
+
+- `npm init -y`
+- `npm init @eslint/config@latest`
+- `npm install --save-dev @types/node`
+- `npm install --save-dev tsx`
+- remove from `package.json` `"main": "index.js",` and then `npx parcel index.html`
+
 <!---
 [comment]: it works with text, you can rename it how you want
 

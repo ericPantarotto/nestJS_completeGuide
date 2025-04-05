@@ -1,0 +1,19 @@
+{
+  "name": "0_ts_3_maps",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/node": "^22.14.0",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "tsx": "^4.19.3",
+    "typescript-eslint": "^8.29.0"
+  }
+}
