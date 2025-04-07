@@ -4,8 +4,11 @@ export class User {
   name: string;
   location: { lat: number; lng: number };
 
-  constructor(name: string, lat: number, lng: number) {
-    this.name = name;
-    this.location = { lat, lng };
+  constructor() {
+    this.name = faker.person.firstName('female');
+    this.location = {
+      lat: faker.location.latitude(),
+      lng: faker.location.longitude(),
+    };
   }
 }

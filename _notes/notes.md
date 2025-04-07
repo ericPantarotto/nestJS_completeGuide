@@ -326,6 +326,22 @@ To use this library, you can install it by running: `npm i @faker-js/faker`
 You'll then need to update all of your imports: `import { faker } from "@faker-js/faker";`
 
 As of their v6 release, TS support is now native and does not require installing the @types declarations: <https://github.com/faker-js/faker#typescript-support>
+
+### **<span style='color: #6e7a73'>Type Definition Files**
+
+**<span style='color: #ffb3b3'>Error:** *Could not find a declaration file for module faker*
+
+A type definition file is going to tell the TypeScript compiler all the different functions that are available inside this JavaScript library, what type of argument they take and what type of value those functions return.
+
+you can think of these type definition files as like an adapter layer.
+
+Sometimes **type definition files** will be installed automatically when you install a JavaScript library. That was the case for Axios.
+
+`definitelyTypedProject`: type definition files for JavaScript libraries.
+
+### **<span style='color: #6e7a73'>Using Type Definition Files**
+
+`index.d.ts` is the typical type definition file, which only contains typescript syntax, its only goal is to describe the different types of values, object functions that exist inside the library
 <!---
 [comment]: it works with text, you can rename it how you want
 
