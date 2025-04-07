@@ -10,6 +10,10 @@
 
 `npm init @eslint/config@latest`
 
+### VSCode Editor - fold level
+
+`CTRL + SHIFT + P: Fold level 2`
+
 ## **<span style='color: #6e7a73'>[Bonus] Appendix: TypeScript**
 
 ### **<span style='color: #6e7a73'>TypeScript Overview**
@@ -360,6 +364,17 @@ The only issue is that if we flip back over to our editor and inside of our `ind
 **<span style='color: #ffdf90'>IMPORTANT:** The goal of a type definition file is to help TypeScript understand how a third party JavaScript library works.
 
 ![image info](./0_sc18.png)
+
+### **<span style='color: #6e7a73'>Exploring Type Definition Files**
+
+**<span style='color: #ffb3b3'>Error:**  If map is not showing change 100% to **100vh**
+
+`<div id="map" style="height: 100vh"></div>`
+
+**<span style='color: #ffb3b3'>Error:** Add a Reference to the Global Type
+
+If the above doesn't work, you can explicitly reference the type definitions in your index.ts file by adding this at the top: `/// <reference types="google.maps" />`
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
