@@ -313,6 +313,19 @@ If a child class has no constructor, then Typescript will execute the constructo
 - `npm install --save-dev tsx`
 - remove from `package.json` `"main": "index.js",` and then `npx parcel index.html`
 
+### **<span style='color: #6e7a73'>Important Info about Faker**
+
+IMPORTANT Info About Faker Installation
+
+In the upcoming lecture, we will be installing the Faker library. You may notice that the GitHub repository for Faker is empty or is displaying some confusing messaging. The library currently no longer exists and is not being maintained.
+
+A community fork of Faker was made to save the project: <https://github.com/faker-js/faker>
+
+To use this library, you can install it by running: `npm install @faker-js/faker@7.6.0`
+
+You'll then need to update all of your imports: `import { faker } from "@faker-js/faker";`
+
+As of their v6 release, TS support is now native and does not require installing the @types declarations: <https://github.com/faker-js/faker#typescript-support>
 <!---
 [comment]: it works with text, you can rename it how you want
 
