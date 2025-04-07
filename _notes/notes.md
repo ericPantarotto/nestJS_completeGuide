@@ -280,7 +280,7 @@ modifiers restrict access to different functions & variables, the default value 
 
 **<span style='color: #ffb3b3'>Error:**
 
-![image info](./0_sc16.png)
+![image info](./0_sc17.png)
 
 when you assign `private` this function can only be called inside the class by other functions of the class itself.
 
@@ -342,6 +342,24 @@ Sometimes **type definition files** will be installed automatically when you ins
 ### **<span style='color: #6e7a73'>Using Type Definition Files**
 
 `index.d.ts` is the typical type definition file, which only contains typescript syntax, its only goal is to describe the different types of values, object functions that exist inside the library
+
+### **<span style='color: #6e7a73'>Google Maps Integration with TypeScript**
+
+to check that the google maps api has been correctly installed you can enter `google` in the devtools console, and it should return an object.
+
+Usually when we make use of TypeScript, we install dependencies using NPM and we import them with normal import statement.
+
+However, this time we have added in a script directly to our HTML file `index.html`, and so that script is going to be added into our project as a **global variable**. It means that essentially inside of our devtools console,you can type `google`; this is a global variable, that is available everywhere inside of our project **without import statements**.
+
+The only issue is that if we flip back over to our editor and inside of our `index.ts`, if just write out `google` by itself. we'll see an error message here that says cannot find any name *google*.
+
+**<span style='color: #ffb3b3'>Error:** So the reason we are seeing this is that TypeScript just doesn't understand that there is a global variable available inside of our project.
+
+**<span style='color: #bbffff'> Note:** We need to help TypeScript understand that there will be a global variable available inside of our project and we need to help it understand the different methods that are available on this google object, we need to install another type definition file: `npm install @types/google.maps`
+
+**<span style='color: #ffdf90'>IMPORTANT:** The goal of a type definition file is to help TypeScript understand how a third party JavaScript library works.
+
+![image info](./0_sc18.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
