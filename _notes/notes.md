@@ -385,6 +385,30 @@ Type your website address (or "localhost", "127.0.0.1", "localhost:port" etc for
 SAVE and Use your key in your project
 
 We can use a wrapping class, `CustomMap` to hide some methods exposed by the Google Maps Api, and only expose the one we want.
+
+### **<span style='color: #6e7a73'>Adding Markers**
+
+**<span style='color: #ffb3b3'>Error:** The map is initialized without a valid Map ID, which will prevent use of Advanced Markers.
+
+Pass the Map ID to the `google.maps.Map` constructor  
+Update the CustomMap class to include the mapId in the map options:
+
+```javascript
+constructor(divId: string) {
+  this.googleMap = new google.maps.Map(
+    document.getElementById(divId) as HTMLElement,
+    {
+      zoom: 1,
+      center: {
+        lat: 0,
+        lng: 0,
+      },
+      mapId: 'YOUR_MAP_ID', // Add your Map ID here
+    }
+  );
+}
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
