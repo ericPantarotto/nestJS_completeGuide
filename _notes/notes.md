@@ -375,6 +375,16 @@ The only issue is that if we flip back over to our editor and inside of our `ind
 
 If the above doesn't work, you can explicitly reference the type definitions in your index.ts file by adding this at the top: `/// <reference types="google.maps" />`
 
+**<span style='color: #ffb3b3'>Error:** Exposing Google Maps API key to Github / HTML:
+
+Go to this address: <https://console.developers.google.com/apis>  
+Click on "Credentials" > "Edit Key"  
+Under "Application restrictions", select "HTTP referrers (web sites)"  
+Under "Website restrictions", Click on "ADD AN ITEM"  
+Type your website address (or "localhost", "127.0.0.1", "localhost:port" etc for local tests) in the text field and press ENTER to add it to the list  
+SAVE and Use your key in your project
+
+We can use a wrapping class, `CustomMap` to hide some methods exposed by the Google Maps Api, and only expose the one we want.
 <!---
 [comment]: it works with text, you can rename it how you want
 
