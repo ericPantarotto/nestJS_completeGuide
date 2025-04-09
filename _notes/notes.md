@@ -423,7 +423,7 @@ when using this `|` operator, TypeScript is going to take a look at the two diff
 
 **<span style='color: #ffb3b3'>Error:** the issue with our current approach is that custom map has a direct dependency on all the different classes inside of our application that we might want to show on the map. So custom map depends upon user, it depends upon company.
 
-**<span style='color: #ffdf90'>IMPORTANT:** So to fix this issue, we're going to invert this dependency, rather than custom map.
+**<span style='color: #ffdf90'>IMPORTANT:** So to fix this issue, we're going to **invert this dependency**, rather than custom map.
 
 class `User.ts`, if you want to work with a `CustomMap.ts`, it is up to you to satisfy the map's requirements and same for `Company`.
 
@@ -435,6 +435,11 @@ class `User.ts`, if you want to work with a `CustomMap.ts`, it is up to you to s
 
 by implementing the `Mappable` interface on our `User` and `Company` classes,  TypeScript is helping us point out the true source of the error, pointing out errors in user /company classes, rather than only in the `index.ts` file before this implementation, and informing us which classes definition have to updated.
 
+## The Basics of Nest
+
+### Project setup
+
+`npm i @nestjs/common @nestjs/core @nestjs/platform-express reflect-metadata typescript`
 <!---
 [comment]: it works with text, you can rename it how you want
 
