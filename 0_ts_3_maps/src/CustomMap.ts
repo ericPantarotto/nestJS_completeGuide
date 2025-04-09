@@ -26,12 +26,20 @@ export class CustomMap {
   }
 
   addMarker(mappable: Mappable): void {
-    new google.maps.marker.AdvancedMarkerElement({
+    const marker = new google.maps.marker.AdvancedMarkerElement({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng,
       },
+    });
+
+    marker.addEventListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: `<div>${mappable.location.lat}, ${mappable.location.lng}</div>`,
+      });
+
+      infoWindow.open(this.googleMap, marker);
     });
   }
 }

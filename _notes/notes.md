@@ -427,6 +427,9 @@ when using this `|` operator, TypeScript is going to take a look at the two diff
 
 class `User.ts`, if you want to work with a `CustomMap.ts`, it is up to you to satisfy the map's requirements and same for `Company`.
 
+### **<span style='color: #6e7a73'>Showing Popup Windows**
+
+**<span style='color: #ffc5a6'>Link:** <https://developers.google.com/maps/documentation/javascript/infowindows>
 <!---
 [comment]: it works with text, you can rename it how you want
 
