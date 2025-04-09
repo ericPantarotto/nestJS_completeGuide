@@ -465,6 +465,11 @@ any server that you set-up will look like something below:
 ![image info](./1_sc3.png)
 
 ![image info](./1_sc4.png)
+
+### **<span style='color: #6e7a73'>Starting Up a Nest App**
+
+`npx tsx src/main.ts`
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
