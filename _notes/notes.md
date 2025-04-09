@@ -470,6 +470,21 @@ any server that you set-up will look like something below:
 
 `npx tsx src/main.ts`
 
+### **<span style='color: #6e7a73'>Routing Decorators**
+
+**<span style='color: #b0ffb6'> app.controller.ts**
+
+```typescript
+@Controller('/app')
+export class AppController {
+  @Get('/home')
+// ....
+}
+```
+
+the correct route now becomes: <http://localhost:3000/app/home>
+
+**<span style='color: #bbffff'> Note:** we're going to use the controller decorator to control some high level routing rules that are going to apply to all of the different route handlers that we set up inside this controller. And then in theory, all the different methods we define inside this controller are going to have a different route
 <!---
 [comment]: it works with text, you can rename it how you want
 
