@@ -409,6 +409,15 @@ constructor(divId: string) {
 }
 ```
 
+### **<span style='color: #6e7a73'>One Possible Solution**
+
+**<span style='color: #b0ffb6'> CustomMaps.ts**: `addMarker(mappable: User | Company){}`
+
+TypeScript is going to do a little powering down operation to limit the number of properties that we can actually reference on `mappable`.
+
+when using this `|` operator, TypeScript is going to take a look at the two different types and it's going to say you can only refer to properties on that argument if they exist in both of these different types.
+
+**<span style='color: #ffdf90'>IMPORTANT:** this approach is not ideal as it will make very long function signature as we have to add new types, it's **not scalable** and more importantly it is adding a **tight-coupling** between our `Map.ts` class and every other classes of our app we want to show with a marker.
 <!---
 [comment]: it works with text, you can rename it how you want
 
