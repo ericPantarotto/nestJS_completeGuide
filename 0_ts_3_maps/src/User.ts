@@ -8,4 +8,8 @@ export class User extends MappableItems {
     super();
     this.name = faker.person.firstName('female');
   }
+
+  markerContent(): string {
+    return `User Name: ${this.name}`;
+  }
 }
