@@ -1,5 +1,5 @@
 /// <reference types="google.maps" />
-// import { Company } from './Company';
+import { Company } from './Company';
 import { User } from './User';
 
 export class CustomMap {
@@ -30,5 +30,13 @@ export class CustomMap {
     });
   }
 
-  // addCompanyMarker(company: Company): void {}
+  addCompanyMarker(company: Company): void {
+    new google.maps.marker.AdvancedMarkerElement({
+      map: this.googleMap,
+      position: {
+        lat: company.location.lat,
+        lng: company.location.lng,
+      },
+    });
+  }
 }
