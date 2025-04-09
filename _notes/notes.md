@@ -441,7 +441,7 @@ by implementing the `Mappable` interface on our `User` and `Company` classes,  T
 
 `npm i @nestjs/common @nestjs/core @nestjs/platform-express reflect-metadata typescript`
 
-### Steps
+### **<span style='color: #6e7a73'>Steps**
 
 - install deps
 - setup typescript compiler settings
@@ -457,6 +457,14 @@ by implementing the `Mappable` interface on our `User` and `Company` classes,  T
 **<span style='color: #bbffff'> Note:** Express is the default server
 
 `tsconfig.json`:   experimentalDecorators & emitDecoratorMetadata are 2 crucial features that make Nestjs work.
+
+### **<span style='color: #6e7a73'>Creating a Controller**
+
+any server that you set-up will look like something below:
+
+![image info](./1_sc3.png)
+
+![image info](./1_sc4.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
