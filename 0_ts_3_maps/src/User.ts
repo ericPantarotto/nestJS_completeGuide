@@ -1,7 +1,8 @@
 import { faker } from '@faker-js/faker';
 import { MappableItems } from './MappableItems';
+import { Mappable } from './CustomMap';
 
-export class User extends MappableItems {
+export class User extends MappableItems implements Mappable {
   name: string;
 
   constructor() {

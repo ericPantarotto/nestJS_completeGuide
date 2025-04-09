@@ -430,6 +430,11 @@ class `User.ts`, if you want to work with a `CustomMap.ts`, it is up to you to s
 ### **<span style='color: #6e7a73'>Showing Popup Windows**
 
 **<span style='color: #ffc5a6'>Link:** <https://developers.google.com/maps/documentation/javascript/infowindows>
+
+### **<span style='color: #6e7a73'>Optional Implements Clauses**
+
+by implementing the `Mappable` interface on our `User` and `Company` classes,  TypeScript is helping us point out the true source of the error, pointing out errors in user /company classes, rather than only in the `index.ts` file before this implementation, and informing us which classes definition have to updated.
+
 <!---
 [comment]: it works with text, you can rename it how you want
 

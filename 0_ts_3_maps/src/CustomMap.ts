@@ -1,12 +1,14 @@
 /// <reference types="google.maps" />
 
 // NOTE: Instructions to every other class on how they can be an argument to 'addMarker'
-interface Mappable {
+export interface Mappable {
   location: {
     lat: number;
     lng: number;
   };
   markerContent(): string;
+
+  // color: string; //HACK: to test the Mappable interface implementation on the classes User and Company
 }
 
 export class CustomMap {
