@@ -1,19 +1,13 @@
 import { faker } from '@faker-js/faker';
+import { MappableItems } from './MappableItems';
 
-export class Company {
+export class Company extends MappableItems {
   companyName: string;
   catchPhrase: string;
-  location: {
-    lat: number;
-    lng: number;
-  };
 
   constructor() {
+    super();
     this.companyName = faker.company.name();
     this.catchPhrase = faker.company.catchPhrase();
-    this.location = {
-      lat: faker.location.latitude(),
-      lng: faker.location.longitude(),
-    };
   }
 }

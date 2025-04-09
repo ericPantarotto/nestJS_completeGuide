@@ -418,6 +418,15 @@ TypeScript is going to do a little powering down operation to limit the number o
 when using this `|` operator, TypeScript is going to take a look at the two different types and it's going to say you can only refer to properties on that argument if they exist in both of these different types.
 
 **<span style='color: #ffdf90'>IMPORTANT:** this approach is not ideal as it will make very long function signature as we have to add new types, it's **not scalable** and more importantly it is adding a **tight-coupling** between our `Map.ts` class and every other classes of our app we want to show with a marker.
+
+### **<span style='color: #6e7a73'>Restricting Access with Interfaces**
+
+**<span style='color: #ffb3b3'>Error:** the issue with our current approach is that custom map has a direct dependency on all the different classes inside of our application that we might want to show on the map. So custom map depends upon user, it depends upon company.
+
+**<span style='color: #ffdf90'>IMPORTANT:** So to fix this issue, we're going to invert this dependency, rather than custom map.
+
+class `User.ts`, if you want to work with a `CustomMap.ts`, it is up to you to satisfy the map's requirements and same for `Company`.
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
