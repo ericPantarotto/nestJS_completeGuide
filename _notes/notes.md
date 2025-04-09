@@ -435,11 +435,28 @@ class `User.ts`, if you want to work with a `CustomMap.ts`, it is up to you to s
 
 by implementing the `Mappable` interface on our `User` and `Company` classes,  TypeScript is helping us point out the true source of the error, pointing out errors in user /company classes, rather than only in the `index.ts` file before this implementation, and informing us which classes definition have to updated.
 
-## The Basics of Nest
+## **<span style='color: #6e7a73'>The Basics of Nest**
 
-### Project setup
+### **<span style='color: #6e7a73'>Project setup**
 
 `npm i @nestjs/common @nestjs/core @nestjs/platform-express reflect-metadata typescript`
+
+### Steps
+
+- install deps
+- setup typescript compiler settings
+- create a Nest module and controller
+- start the app
+
+### **<span style='color: #6e7a73'>TypeScript Configuration**
+
+![image info](./1_sc1.png)
+
+![image info](./1_sc2.png)
+
+**<span style='color: #bbffff'> Note:** Express is the default server
+
+`tsconfig.json`:   experimentalDecorators & emitDecoratorMetadata are 2 crucial features that make Nestjs work.
 <!---
 [comment]: it works with text, you can rename it how you want
 
