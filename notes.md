@@ -22,7 +22,7 @@
 
 Typescript = Javascript + **a type system**
 
-![image info](./0_sc1.png)
+![image info](./_notes/0_sc1.png)
 
 - The only way to see a bug in Javascript is to execute the code
 - once the app is deployed or before that run in a browser in a development environment/server, the entire *type system* goes away, the browser and Node.js don't know what Typescript is
@@ -30,7 +30,7 @@ Typescript = Javascript + **a type system**
 - the typescript compiler compiles the typescript code and produces javascript code, which is what is executed
 - unlike other strongly typed languages,  typescript compiler doesn't do any performance optimization
 
-![image info](./0_sc2.png)
+![image info](./_notes/0_sc2.png)
 
 ### **<span style='color: #6e7a73'>Environment Setup**
 
@@ -42,11 +42,11 @@ Typescript = Javascript + **a type system**
 
 `tsc --help`
 
-![image info](./0_sc3.png)
+![image info](./_notes/0_sc3.png)
 
 from a terminal, in any location, you can open vscode with `code .` once you added *code* to path
 
-![image info](./0_sc4.png)
+![image info](./_notes/0_sc4.png)
 
 from Settings / prettier: single quote + Settings / Editor: Tab Size
 
@@ -89,7 +89,7 @@ in an `interface` you can ignore properties
 
 As soon as we apply our interface to our response object, **Typescript detects error, during development**, inside the code editor, well before we compiled our code, or tested/ran it. That's the power of typescript and what it's all about!
 
-![image info](./0_sc5.png)
+![image info](./_notes/0_sc5.png)
 
 ### **<span style='color: #6e7a73'>Types**
 
@@ -108,7 +108,7 @@ Type:  easy way to refer to the different properties and functions that a value 
 - number
 - other types defined in an interface, or built-in the language itself
 
-![image info](./0_sc6.png)
+![image info](./_notes/0_sc6.png)
 
 ### **<span style='color: #6e7a73'>Examples of Types**
 
@@ -116,7 +116,7 @@ the whole point of types: it is a shortcut to say here are the different propert
 
 ### **<span style='color: #6e7a73'>Type Annotations and Inference**
 
-![image info](./0_sc7.png)
+![image info](./_notes/0_sc7.png)
 
 ### **<span style='color: #6e7a73'> Annotations around Functions**
 
@@ -132,15 +132,15 @@ const logNumber: (i: number) => void = (i: number) => {
 
 ### **<span style='color: #6e7a73'> Understanding Inference**
   
-![image info](./0_sc8.png)
+![image info](./_notes/0_sc8.png)
 
-![image info](./0_sc9.png)
+![image info](./_notes/0_sc9.png)
 
 ### **<span style='color: #6e7a73'>The Any type**
 
 `JSON.parse(...);` is a function that returns `any`
 
-![image info](./0_sc10.png)
+![image info](./_notes/0_sc10.png)
 
 **<span style='color: #bbffff'> Note:**
 
@@ -149,7 +149,7 @@ const logNumber: (i: number) => void = (i: number) => {
 - So as a shortcut, TypeScript instead decides to simply say, it's not possible to guess all these different types and you get back back the `any` type.
 - The `any` type essentially means that TypeScript has no idea what type of value is being returned from a function.
 
-![image info](./0_sc11.png)
+![image info](./_notes/0_sc11.png)
 
 **<span style='color: #ffdf90'>IMPORTANT:** in general, that is a very bad thing to have `any` inside of our application. Remember the entire idea behind TypeScript is that we are using TypeScript to catch errors inside of our code editor and we're able to do that because of types.
 
@@ -167,13 +167,13 @@ The above annotation is an annotation for the variable. We were telling TypeScri
 
 ### **<span style='color: #6e7a73'>Inference around functions**
 
-![image info](./0_sc12.png)
+![image info](./_notes/0_sc12.png)
 
 **<span style='color: #bbffff'> Note:** If I now hover over the function, we see an annotation on the variable itself that says the function returns a number. So that's type inference in play. We did not add in a type return annotation, but TypeScript read the body of our function and it knows that we are going to return a number.
 
 So just like we saw with inference before, with variable declarations, we have type inference around only the return value from a function.
 
-![image info](./0_sc13.png)
+![image info](./_notes/0_sc13.png)
 
 **<span style='color: #ffdf90'>IMPORTANT:** So we don't have to add in that return annotation if we don't want to. However, you and I **always will**.
 
@@ -206,7 +206,7 @@ const logWeatherDestruct = ({
 
 ### **<span style='color: #6e7a73'>Why typed arrays**
 
-![image info](./0_sc14.png)
+![image info](./_notes/0_sc14.png)
 
 ### **<span style='color: #6e7a73'>Multiple types in arrays**
 
@@ -264,7 +264,7 @@ The two objects `civic` and `drink` represent very different things inside of ou
 
 ### **<span style='color: #6e7a73'>General plan with Interfaces**
 
-![image info](./0_sc15.png)
+![image info](./_notes/0_sc15.png)
 
 ### **<span style='color: #6e7a73'>Classes**
 
@@ -278,13 +278,13 @@ When we have a class that extends another, we can optionally choose to override 
 
 modifiers restrict access to different functions & variables, the default value is `public`
 
-![image info](./0_sc16.png)
+![image info](./_notes/0_sc16.png)
 
 #### private
 
 **<span style='color: #ffb3b3'>Error:**
 
-![image info](./0_sc17.png)
+![image info](./_notes/0_sc17.png)
 
 when you assign `private` this function can only be called inside the class by other functions of the class itself.
 
@@ -363,7 +363,7 @@ The only issue is that if we flip back over to our editor and inside of our `ind
 
 **<span style='color: #ffdf90'>IMPORTANT:** The goal of a type definition file is to help TypeScript understand how a third party JavaScript library works.
 
-![image info](./0_sc18.png)
+![image info](./_notes/0_sc18.png)
 
 ### **<span style='color: #6e7a73'>Exploring Type Definition Files**
 
@@ -450,9 +450,9 @@ by implementing the `Mappable` interface on our `User` and `Company` classes,  T
 
 ### **<span style='color: #6e7a73'>TypeScript Configuration**
 
-![image info](./1_sc1.png)
+![image info](./_notes/1_sc1.png)
 
-![image info](./1_sc2.png)
+![image info](./_notes/1_sc2.png)
 
 **<span style='color: #bbffff'> Note:** Express is the default server
 
@@ -462,9 +462,9 @@ by implementing the `Mappable` interface on our `User` and `Company` classes,  T
 
 any server that you set-up will look like something below:
 
-![image info](./1_sc3.png)
+![image info](./_notes/1_sc3.png)
 
-![image info](./1_sc4.png)
+![image info](./_notes/1_sc4.png)
 
 ### **<span style='color: #6e7a73'>Starting Up a Nest App**
 
@@ -485,6 +485,14 @@ export class AppController {
 the correct route now becomes: <http://localhost:3000/app/home>
 
 **<span style='color: #bbffff'> Note:** we're going to use the controller decorator to control some high level routing rules that are going to apply to all of the different route handlers that we set up inside this controller. And then in theory, all the different methods we define inside this controller are going to have a different route
+
+## **<span style='color: #6e7a73'>Generating Projects with the Nest CLI**
+
+### **<span style='color: #6e7a73'>App setup**
+
+from your terminal: `sudo npm install -g @nestjs/cli`
+
+`nest new 3_messages`
 <!---
 [comment]: it works with text, you can rename it how you want
 
