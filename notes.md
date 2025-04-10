@@ -506,6 +506,10 @@ To start fresh, from the automatically created project, we remove:
 - app.service.ts
 
 to create our *module*, `nest generate module messages`
+
+### **<span style='color: #6e7a73'>More on generating files**
+
+![image info](./3_sc1.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
