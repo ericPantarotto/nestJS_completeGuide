@@ -5,8 +5,8 @@ export class MessagesController {
   @Get()
   listMessages() {
     return [
-      { id: 1, text: 'Hello World' },
-      { id: 2, text: 'Hello NestJS' },
+      { id: 1, text: 'Hello NestJS 1' },
+      { id: 2, text: 'Hello NestJS 2' },
     ];
   }
 
@@ -17,6 +17,6 @@ export class MessagesController {
 
   @Get(':id')
   getMessage() {
-    return { id: 1, text: 'Hello World' };
+    return { id: 1, text: 'Hello World NestJS1, requested from id #1' };
   }
 }

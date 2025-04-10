@@ -512,6 +512,12 @@ to create our *module*, `nest generate module messages`
 creating the controller: `nest generate controller messages/messages --flat`
 
 ![image info](./3_sc1.png)
+
+### **<span style='color: #6e7a73'>VSCode REST Client Extension**
+
+**<span style='color: #b0ffb6'> request.http**
+
+separate each http request with `###`
 <!---
 [comment]: it works with text, you can rename it how you want
 
