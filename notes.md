@@ -509,6 +509,8 @@ to create our *module*, `nest generate module messages`
 
 ### **<span style='color: #6e7a73'>More on generating files**
 
+creating the controller: `nest generate controller messages/messages --flat`
+
 ![image info](./3_sc1.png)
 <!---
 [comment]: it works with text, you can rename it how you want
