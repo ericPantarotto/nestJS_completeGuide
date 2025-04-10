@@ -493,6 +493,19 @@ the correct route now becomes: <http://localhost:3000/app/home>
 from your terminal: `sudo npm install -g @nestjs/cli`
 
 `nest new 3_messages`
+
+### **<span style='color: #6e7a73'>Using the Nest CLI to Generate Files**
+
+to start your *NestJS* project in watch mode; `npm run start:dev`
+
+To start fresh, from the automatically created project, we remove:
+
+- app.controller.spec.ts
+- app.controller.ts
+- app.module.ts
+- app.service.ts
+
+to create our *module*, `nest generate module messages`
 <!---
 [comment]: it works with text, you can rename it how you want
 
