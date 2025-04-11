@@ -531,9 +531,15 @@ separate each http request with `###`
 
 ### **<span style='color: #6e7a73'>Adding Validation Rules**
 
-- Create a class that describes the different properties that the request body should have: **Data Transfer Object === `Dto`**
-- Add a libraty `npm i class-validator class-transformer`, to add validation rules to the class
+- Create a class that describes the different properties that the request body should have: **Data Transfer Object === Dto**
+- Add a library `npm i class-validator class-transformer`, to add validation rules to the class
 - Apply that class to the request handler
+
+### **<span style='color: #6e7a73'>Behind the Scenes of Validation**
+
+**<span style='color: #ffc5a6'>Class Transformer:** <https://github.com/typestack/class-transformer>
+
+![image info](./_notes/4_sc3.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
