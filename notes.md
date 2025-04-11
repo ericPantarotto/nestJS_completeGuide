@@ -525,6 +525,10 @@ separate each http request with `###`
 
 ![image info](./_notes/4_sc1.png)
 
+### **<span style='color: #6e7a73'>Using Pipes for validation**
+
+![image info](./_notes/4_sc2.png)
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
