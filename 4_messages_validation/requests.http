@@ -6,7 +6,10 @@ POST http://localhost:3000/messages
 Content-Type: application/json
 
 {
-  "message": "Hello, NestJS!"
+  "content": "Hello, NestJS!"
+  # "content": 123 //ERROR: Validation failed (content must be a string)
+  # "content": null //ERROR: Validation failed (content must be a string)
+  # "contentSpellingError": 'Content spelling error' //ERROR: Validation failed (field name is incorrect)
 }
 
 ### Get a specific message

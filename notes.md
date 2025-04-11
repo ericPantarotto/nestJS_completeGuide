@@ -529,6 +529,11 @@ separate each http request with `###`
 
 ![image info](./_notes/4_sc2.png)
 
+### **<span style='color: #6e7a73'>Adding Validation Rules**
+
+- Create a class that describes the different properties that the request body should have: **Data Transfer Object === `Dto`**
+- Add a libraty `npm i class-validator class-transformer`, to add validation rules to the class
+- Apply that class to the request handler
 <!---
 [comment]: it works with text, you can rename it how you want
 
