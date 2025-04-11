@@ -539,6 +539,8 @@ separate each http request with `###`
 
 **<span style='color: #ffc5a6'>Class Transformer:** <https://github.com/typestack/class-transformer>
 
+### **<span style='color: #6e7a73'>How Type Info is Preserved**
+
 ![image info](./_notes/4_sc3.png)
 <!---
 [comment]: it works with text, you can rename it how you want
