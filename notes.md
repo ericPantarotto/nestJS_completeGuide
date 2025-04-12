@@ -569,11 +569,25 @@ We're going to import helper functions from the *NodeJS* standard library.
 import { readFile, writeFile } from 'fs/promises';
 ```
 
-<!---
 [comment]: it works with text, you can rename it how you want
 
 ![image info](./1_sc1.png)
 
+### **<span style='color: #6e7a73'>Implementing a Service**
+
+**<span style='color: #b0ffb6'> message.service.ts**
+
+```typescript
+constructor() {
+    // Service is creating its own dependencies
+    this.messagesRepo = new MessagesRepository();
+  }
+```
+
+**<span style='color: #ffb3b3'>Error:** We have set up a dependency between these two classes: `message.service` and `message.repository`, and the service is creating its own dependency. This is something that we do not do in *NestJS*.
+
+**<span style='color: #ffdf90'>IMPORTANT:** We do not have any class creating its own dependencies inside of a constructor. Instead, we're going to use a very special system in *NestJS* referred to as **dependency injection to set up dependencies between different classes**.
+<!---
 **<span style='color: #ffdf90'>IMPORTANT:**
 **<span style='color: #bbffff'> Note:**
 **<span style='color: #ffc5a6'>Link:**
