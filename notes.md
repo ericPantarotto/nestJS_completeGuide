@@ -558,6 +558,17 @@ separate each http request with `###`
 - access multiple kinds of data
 - combine multiple different repositories
 - testing
+
+### **<span style='color: #6e7a73'>Implementing a repository**
+
+**<span style='color: #b0ffb6'> message.repository.ts**
+
+We're going to import helper functions from the *NodeJS* standard library.
+
+```typescript
+import { readFile, writeFile } from 'fs/promises';
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
