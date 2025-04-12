@@ -542,6 +542,12 @@ separate each http request with `###`
 ### **<span style='color: #6e7a73'>How Type Info is Preserved**
 
 ![image info](./_notes/4_sc3.png)
+
+## **<span style='color: #6e7a73'>Nest Architecture: Services and Repositories**
+
+### **<span style='color: #6e7a73'>Services and Repositories**
+
+![image info](./_notes/5_sc1.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
