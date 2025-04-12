@@ -548,6 +548,16 @@ separate each http request with `###`
 ### **<span style='color: #6e7a73'>Services and Repositories**
 
 ![image info](./_notes/5_sc1.png)
+
+![image info](./_notes/5_sc2.png)
+
+**<span style='color: #bbffff'> Note:** it starts to get really confusing why we create a service and how it's different from a repository. And that's because we very frequently end up with methods on the service that look absolutely identical to the underlying repository. And you are going to end up in a scenario where you say, Why are we creating this service at all?
+
+**<span style='color: #ffdf90'>IMPORTANT:** we still want to make these services. There are very good reasons for setting up these services and having them behave as sort of like a proxy that sits in front of our repositories.
+
+- access multiple kinds of data
+- combine multiple different repositories
+- testing
 <!---
 [comment]: it works with text, you can rename it how you want
 
