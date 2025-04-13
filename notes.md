@@ -592,16 +592,16 @@ constructor() {
 
 **<span style='color: #ffdf90'>IMPORTANT:** Inversion of Control Principle: if you want to have reusable code, classes should not create instances of its dependencies on its own.
 
-![image info](./5_sc3.png)
+![image info](./_notes/5_sc3.png)
 
-![image info](./5_sc4.png)
+![image info](./_notes/5_sc4.png)
 
-![image info](./5_sc5.png)
+![image info](./_notes/5_sc5.png)
 
 - whenever you create a copy or an instance of `messagesService`, you must provide an object that satisfies the *repository interface*.
 - the reason this is best is that we do not rely upon getting exactly the `messagesRepository`. Instead, our code can work perfectly fine as long as you pass it any object that satisfies this interface. It could be the `messagesRepository`, or it could be a totally different kind of repository with a totally different implementation.
 
-![image info](./5_sc6.png)
+![image info](./_notes/5_sc6.png)
 
 **<span style='color: #bbffff'> Note:** whenever we write out automated testing, we want our code to run as fast as possible. We want the test to execute very, very quickly. Whenever you are doing automated testing, it is generally bad practice to have any tests that actually try to write files or retrieve resources from the hard disk.
 
@@ -609,15 +609,58 @@ So if we were trying to write a test around messages service, ideally we would n
 
 This class could have all the required methods like *findOne, findAll and create.* But rather than actually writing a file to the hard drive and reading from a file on the hard drive, maybe the fake repository could just store a list of messages in memory.
 
-**<span style='color: #ffdf90'>IMPORTANT:**it's only through the use of this interface right here that we can pass in any kind of object to be used as a repository.  we can swap out the dependency for `messagesService` if perhaps it's more advantageous to give it a different repository. This makes `messagesService` easier to test and possibly more usable as well.
+**<span style='color: #ffdf90'>IMPORTANT:** it's only through the use of this interface right here that we can pass in any kind of object to be used as a repository.  we can swap out the dependency for `messagesService` if perhaps it's more advantageous to give it a different repository. This makes `messagesService` easier to test and possibly more usable as well.
 
 ### **<span style='color: #6e7a73'>Introduction to Dependency Injection**
 
+
 **<span style='color: #ffdf90'>IMPORTANT:** **Dependency injection** is all about making use of inversion of control, but not having to create a ton of different classes or a ton of different instances every single time. **So the total linchpin of how dependency injection works is something called a container.** DI Container / Injector, that list all classes and their dependencies
+
+### **<span style='color: #6e7a73'>Refactoring to Use Dependency Injection**
 
 #### **<span style='color: #6e7a73'>DI Container Flow**
 
-![image info](./5_sc7.png)
+![image info](./_notes/5_sc7.png)
+
+#### **<span style='color: #6e7a73'>using Typescript Synthetic sugar with Dependency Injection**
+
+**<span style='color: #bbffff'> Note:**The 2 below are absolutely equivalent and the later saves a lot of boiler plate code
+
+```typescript
+export class MessagesService {
+  messagesRepo: MessagesRepository;
+
+  constructor(messagesRepo: MessagesRepository) {
+    this.messagesRepo = messagesRepo;
+  }
+// ...
+}
+```
+
+```typescript
+export class MessagesService {
+  constructor(public messagesRepo: MessagesRepository) {  }
+// ...
+}
+```
+
+To register classes in DI Container, we use the `@Injectable()` decorator.
+
+**<span style='color: #bbffff'> Note:** We don't have to register our `Controller` with our container as the controller only consumes classes and NestJS automatically does it for us.
+
+**<span style='color: #b0ffb6'> messages.module.ts** Inside our module file, we need to add a new property `providers` to the `@Module()` decorator, listing classes that can be used as dependencies to others.
+
+```typescript
+@Module({
+  controllers: [MessagesController],
+  providers: [MessagesService, MessagesRepository],
+})
+```
+
+**<span style='color: #bbffff'> Note:** In NestJS, at no point in time during this refactor, did we have to:
+
+- create a container/injector: even though it exists in our application, we never really interact with it directly
+- doing explicit registration, instead we add the *Injectable()* decorators to dependencies and the `providers` property to the module to list them.
 <!---
 [comment]: it works with text, you can rename it how you want
 

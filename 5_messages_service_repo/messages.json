@@ -1,6 +1,1 @@
-{
-  "566": {
-    "id": 566,
-    "content": "Hello, NestJS!"
-  }
-}
+{"284":{"id":284,"content":"Hello, NestJS! message after adding DI"},"566":{"id":566,"content":"Hello, NestJS!"}}
