@@ -613,7 +613,6 @@ This class could have all the required methods like *findOne, findAll and create
 
 ### **<span style='color: #6e7a73'>Introduction to Dependency Injection**
 
-
 **<span style='color: #ffdf90'>IMPORTANT:** **Dependency injection** is all about making use of inversion of control, but not having to create a ton of different classes or a ton of different instances every single time. **So the total linchpin of how dependency injection works is something called a container.** DI Container / Injector, that list all classes and their dependencies
 
 ### **<span style='color: #6e7a73'>Refactoring to Use Dependency Injection**
@@ -661,6 +660,18 @@ To register classes in DI Container, we use the `@Injectable()` decorator.
 
 - create a container/injector: even though it exists in our application, we never really interact with it directly
 - doing explicit registration, instead we add the *Injectable()* decorators to dependencies and the `providers` property to the module to list them.
+
+### **<span style='color: #6e7a73'>Few More Notes on DI**
+
+**<span style='color: #bbffff'> Note1:** we didn't make use of `interface` due to  TypeScript implementation which is a bit more difficult
+
+**<span style='color: #bbffff'> Note2:** The container maintains a list of all instances it has created. Whenever a container creates a dependency instance, it is going to store it internally and reuse it over time, if you ask for it again. We have to keep in mind, the same instance of the service is shared in multiple locations inside our project.
+
+**<span style='color: #bbffff'> Note3:** It is possible to get also a brand new copy/instance of a dependency when needed
+
+#### **<span style='color: #6e7a73'>What do we gain by making use of DI in NestJS**
+
+Testing a NestJS application with dependency injection, implementing Investion of Control Principle will be far easier. This is the main payout!
 <!---
 [comment]: it works with text, you can rename it how you want
 
