@@ -569,9 +569,6 @@ We're going to import helper functions from the *NodeJS* standard library.
 import { readFile, writeFile } from 'fs/promises';
 ```
 
-[comment]: it works with text, you can rename it how you want
-
-![image info](./1_sc1.png)
 
 ### **<span style='color: #6e7a73'>Implementing a Service**
 
@@ -588,10 +585,37 @@ constructor() {
 
 **<span style='color: #ffdf90'>IMPORTANT:** We do not have any class creating its own dependencies inside of a constructor. Instead, we're going to use a very special system in *NestJS* referred to as **dependency injection to set up dependencies between different classes**.
 
-### **<span style='color: #6e7a73'> Reporting Errors with Exceptions**
+### **<span style='color: #6e7a73'>Reporting Errors with Exceptions**
 
 `node_modules/@nestjs/common/exceptions`, you can find files for each of these very common Http status codes are wrapped up inside these different exceptions.
+
+### **<span style='color: #6e7a73'>Understanding Inversion of Control**
+
+**<span style='color: #ffdf90'>IMPORTANT:** Inversion of Control Principle: if you want to have reusable code, classes should not create instances of its dependencies on its own.
+
+![image info](./5_sc3.png)
+
+![image info](./5_sc4.png)
+
+![image info](./5_sc5.png)
+
+- whenever you create a copy or an instance of `messagesService`, you must provide an object that satisfies the *repository interface*.
+- the reason this is best is that we do not rely upon getting exactly the `messagesRepository`. Instead, our code can work perfectly fine as long as you pass it any object that satisfies this interface. It could be the `messagesRepository`, or it could be a totally different kind of repository with a totally different implementation.
+
+![image info](./5_sc6.png)
+
+**<span style='color: #bbffff'> Note:** whenever we write out automated testing, we want our code to run as fast as possible. We want the test to execute very, very quickly. Whenever you are doing automated testing, it is generally bad practice to have any tests that actually try to write files or retrieve resources from the hard disk.
+
+So if we were trying to write a test around messages service, ideally we would not use the real messages repository because that thing tries to write to the hard disk. Instead what we could do in this automated testing environment. If we were using this good version of our code, we could very quickly create a fake repository. So some extra class that only exists in the automated testing world.
+
+This class could have all the required methods like *findOne, findAll and create.* But rather than actually writing a file to the hard drive and reading from a file on the hard drive, maybe the fake repository could just store a list of messages in memory.
+
+**<span style='color: #ffdf90'>IMPORTANT:**it's only through the use of this interface right here that we can pass in any kind of object to be used as a repository.
 <!---
+[comment]: it works with text, you can rename it how you want
+
+![image info](./1_sc1.png)
+
 **<span style='color: #ffdf90'>IMPORTANT:**
 **<span style='color: #bbffff'> Note:**
 **<span style='color: #ffc5a6'>Link:**
