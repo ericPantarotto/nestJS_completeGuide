@@ -569,7 +569,6 @@ We're going to import helper functions from the *NodeJS* standard library.
 import { readFile, writeFile } from 'fs/promises';
 ```
 
-
 ### **<span style='color: #6e7a73'>Implementing a Service**
 
 **<span style='color: #b0ffb6'> message.service.ts**
@@ -610,7 +609,15 @@ So if we were trying to write a test around messages service, ideally we would n
 
 This class could have all the required methods like *findOne, findAll and create.* But rather than actually writing a file to the hard drive and reading from a file on the hard drive, maybe the fake repository could just store a list of messages in memory.
 
-**<span style='color: #ffdf90'>IMPORTANT:**it's only through the use of this interface right here that we can pass in any kind of object to be used as a repository.
+**<span style='color: #ffdf90'>IMPORTANT:**it's only through the use of this interface right here that we can pass in any kind of object to be used as a repository.  we can swap out the dependency for `messagesService` if perhaps it's more advantageous to give it a different repository. This makes `messagesService` easier to test and possibly more usable as well.
+
+### **<span style='color: #6e7a73'>Introduction to Dependency Injection**
+
+**<span style='color: #ffdf90'>IMPORTANT:** **Dependency injection** is all about making use of inversion of control, but not having to create a ton of different classes or a ton of different instances every single time. **So the total linchpin of how dependency injection works is something called a container.** DI Container / Injector, that list all classes and their dependencies
+
+#### **<span style='color: #6e7a73'>DI Container Flow**
+
+![image info](./5_sc7.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
