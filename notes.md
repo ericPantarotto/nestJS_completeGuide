@@ -579,7 +579,7 @@ import { readFile, writeFile } from 'fs/promises';
 
 ```typescript
 constructor() {
-    // Service is creating its own dependencies
+  // Service is creating its own dependencies
     this.messagesRepo = new MessagesRepository();
   }
 ```
@@ -587,6 +587,10 @@ constructor() {
 **<span style='color: #ffb3b3'>Error:** We have set up a dependency between these two classes: `message.service` and `message.repository`, and the service is creating its own dependency. This is something that we do not do in *NestJS*.
 
 **<span style='color: #ffdf90'>IMPORTANT:** We do not have any class creating its own dependencies inside of a constructor. Instead, we're going to use a very special system in *NestJS* referred to as **dependency injection to set up dependencies between different classes**.
+
+### **<span style='color: #6e7a73'> Reporting Errors with Exceptions**
+
+`node_modules/@nestjs/common/exceptions`, you can find files for each of these very common Http status codes are wrapped up inside these different exceptions.
 <!---
 **<span style='color: #ffdf90'>IMPORTANT:**
 **<span style='color: #bbffff'> Note:**
