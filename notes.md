@@ -698,6 +698,12 @@ delete all files in `./src` but `main.ts`
 ### **<span style='color: #6e7a73'>Consuming Multiple Modules**
 
 to test the app, [http://localhost:3000/computer]
+
+## **<span style='color: #6e7a73'>Big Project Time**
+
+### **<span style='color: #6e7a73'>API Design**
+
+![image info](./_notes/7_sc1.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
