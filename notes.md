@@ -704,6 +704,14 @@ to test the app, [http://localhost:3000/computer]
 ### **<span style='color: #6e7a73'>API Design**
 
 ![image info](./_notes/7_sc1.png)
+
+### **<span style='color: #6e7a73'>Module Design!**
+
+![image info](./_notes/7_sc2.png)
+
+### **<span style='color: #6e7a73'>Generating Modules, Controllers, and Services**
+
+**<span style='color: #bbffff'> Note:** Remember, we do not use the `nest cli` to generate repositories for us. The reason for this is that these repositories are almost always going to be very, very different depending upon how we are storing our data.
 <!---
 [comment]: it works with text, you can rename it how you want
 
