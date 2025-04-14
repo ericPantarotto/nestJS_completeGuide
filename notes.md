@@ -494,6 +494,10 @@ from your terminal: `sudo npm install -g @nestjs/cli`
 
 `nest new 3_messages`
 
+#### Git
+
+When creating a new NestJS project, you can delete the `.git` initialization with `rm -rd .git*`
+
 ### **<span style='color: #6e7a73'>Using the Nest CLI to Generate Files**
 
 to start your *NestJS* project in watch mode; `npm run start:dev`
