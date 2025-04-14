@@ -675,7 +675,7 @@ To register classes in DI Container, we use the `@Injectable()` decorator.
 
 #### **<span style='color: #6e7a73'>What do we gain by making use of DI in NestJS**
 
-Testing a NestJS application with dependency injection, implementing Investion of Control Principle will be far easier. This is the main payout!
+Testing a NestJS application with dependency injection, implementing Inversion of Control Principle will be far easier. This is the main payout!
 
 ## **<span style='color: #6e7a73'>Nest Architecture: Organizing code with Modules**
 
@@ -694,6 +694,10 @@ delete all files in `./src` but `main.ts`
 ![image info](./_notes/6_sc1.png)
 
 ![image info](./_notes/6_sc2.png)
+
+### **<span style='color: #6e7a73'>Consuming Multiple Modules**
+
+to test the app, [http://localhost:3000/computer]
 <!---
 [comment]: it works with text, you can rename it how you want
 
