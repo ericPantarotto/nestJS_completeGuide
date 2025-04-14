@@ -689,7 +689,11 @@ delete all files in `./src` but `main.ts`
 
 `nest g controller computer`
 
+### **<span style='color: #6e7a73'>Setting Up DI Between Modules**
 
+![image info](./_notes/6_sc1.png)
+
+![image info](./_notes/6_sc2.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
