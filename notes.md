@@ -732,6 +732,8 @@ to test the app, [http://localhost:3000/computer]
 ### **<span style='color: #6e7a73'>Creating an Entity and Repository**
 
 ![image info](./_notes/8_sc3.png)
+
+**<span style='color: #bbffff'> Note:** Note that instead of using the NestJS convention to name the class *UserEntity* in a `user.entity.ts` file, we name the class *User*.
 <!---
 [comment]: it works with text, you can rename it how you want
 
