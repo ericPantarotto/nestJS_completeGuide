@@ -734,6 +734,27 @@ to test the app, [http://localhost:3000/computer]
 ![image info](./_notes/8_sc3.png)
 
 **<span style='color: #bbffff'> Note:** Note that instead of using the NestJS convention to name the class *UserEntity* in a `user.entity.ts` file, we name the class *User*.
+
+### **<span style='color: #6e7a73'>Understanding TypeORM Decorators**
+
+#### **<span style='color: #6e7a73'>SQL Migration**
+
+![image info](./_notes/8_sc4.png)
+
+**<span style='color: #bbffff'> Note:** notice that inside of our project:
+
+- **We have not written out any migration**.
+- We have not manually created our database.
+- We have not really set up any rigid structure around our data.
+
+That is because *TypeORM* has a very special feature in it referred to as the `synchronization=true` feature.  This feature right here is only for use in the development environment. This option, when set to true, is going to cause type to take a look at the structure of all your different entities and then automatically update the structure of your database.
+
+- It's going to create and remove tables.
+- It will add and remove columns and it will change the type of data stored in these columns.
+
+And this is all done automatically through type ORM with the use of those entities and all those different decorators.
+
+**<span style='color: #ffdf90'>IMPORTANT:** It is extremely important that we never run that migrate or that `synchronize` feature of `true` in a production environment.
 <!---
 [comment]: it works with text, you can rename it how you want
 
