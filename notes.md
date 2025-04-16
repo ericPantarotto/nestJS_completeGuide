@@ -771,6 +771,23 @@ And this is all done automatically through type ORM with the use of those entiti
 ### **<span style='color: #6e7a73'>Setting Up Body Validation**
 
 `npm i class-validator class-transformer`
+
+### **<span style='color: #6e7a73'>Manual Route Testing*
+
+**<span style='color: #b0ffb6'> src/users/requests.http**
+
+```html
+POST <http://localhost:3000/auth/signup>
+Content-Type: application/json
+
+{
+  "email": "<test@test.com>",
+  "password": "test1234",
+  "admin": true
+}
+```
+
+**<span style='color: #ffdf90'>IMPORTANT:** extra property such as `admin` inside the body of the request are ignored. This is done primarily as a security concern because we don't want to allow users to add in additional properties to incoming requests
 <!---
 [comment]: it works with text, you can rename it how you want
 
