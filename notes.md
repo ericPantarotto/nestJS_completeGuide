@@ -761,6 +761,16 @@ And this is all done automatically through type ORM with the use of those entiti
 ### **<span style='color: #6e7a73'>Quick note on Repositories**
 
 ![image info](./_notes/8_sc5.png)
+
+### **<span style='color: #6e7a73'>Few extra routes**
+
+![image info](./_notes/8_sc6.png)
+
+![image info](./_notes/8_sc7.png)
+
+### **<span style='color: #6e7a73'>Setting Up Body Validation**
+
+`npm i class-validator class-transformer`
 <!---
 [comment]: it works with text, you can rename it how you want
 
