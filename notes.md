@@ -712,6 +712,12 @@ to test the app, [http://localhost:3000/computer]
 ### **<span style='color: #6e7a73'>Generating Modules, Controllers, and Services**
 
 **<span style='color: #bbffff'> Note:** Remember, we do not use the `nest cli` to generate repositories for us. The reason for this is that these repositories are almost always going to be very, very different depending upon how we are storing our data.
+
+## **<span style='color: #6e7a73'>Persisting Data with TypeORM**
+
+### **<span style='color: #6e7a73'>Persistent Data with NestJS**
+
+![image info](./_notes/8_sc1.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
