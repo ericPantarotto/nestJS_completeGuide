@@ -725,9 +725,13 @@ to test the app, [http://localhost:3000/computer]
 
 `npm i @nestjs/typeorm typeorm sqlite3`
 
-**<span style='color: #bbffff'> Note:** this is very important when we are using type ORM, we do not have to create repository files manually as we did on our last `messages` application. Instead, these repositories are going to be created for us automatically behind the scenes. We don't even end up seeing a generated file. These are two classes that will be created for us.
+**<span style='color: #ffdf90'>IMPORTANT:** this is very important when we are using type ORM, we do not have to create repository files manually as we did on our last `messages` application. Instead, these repositories are going to be created for us automatically behind the scenes. We don't even end up seeing a generated file. These are two classes that will be created for us.
 
 **<span style='color: #bbffff'> Note:** THe SQLite connection that we create in **<span style='color: #b0ffb6'> app.module.ts** is going to be automatically shared down into the all the other modules inside of our project.
+
+### **<span style='color: #6e7a73'>Creating an Entity and Repository**
+
+![image info](./_notes/8_sc3.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
