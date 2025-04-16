@@ -741,6 +741,8 @@ to test the app, [http://localhost:3000/computer]
 
 ![image info](./_notes/8_sc4.png)
 
+#### **<span style='color: #6e7a73'>TypeORM**
+
 **<span style='color: #bbffff'> Note:** notice that inside of our project:
 
 - **We have not written out any migration**.
@@ -755,6 +757,10 @@ That is because *TypeORM* has a very special feature in it referred to as the `s
 And this is all done automatically through type ORM with the use of those entities and all those different decorators.
 
 **<span style='color: #ffdf90'>IMPORTANT:** It is extremely important that we never run that migrate or that `synchronize` feature of `true` in a production environment.
+
+### **<span style='color: #6e7a73'>Quick note on Repositories**
+
+![image info](./_notes/8_sc5.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
