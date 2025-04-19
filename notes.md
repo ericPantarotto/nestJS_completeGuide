@@ -849,6 +849,24 @@ create(email: string, password: string) {
   return this.repo.save({email, password});
 }
 ```
+
+### **<span style='color: #6e7a73'>More on Create vs Save**
+
+Hooks in *TypeORM* allow us to define functions on an entity that will be called automatically at certain points in time.
+
+#### **<span style='color: #6e7a73'>Create vs Save: Hooks**
+
+![image info](./_notes/9_sc2.png)
+
+**<span style='color: #ffdf90'>IMPORTANT**
+
+- Hooks are not executed if you call `save()` with a plain object instead of the entity created via `create()`.
+- So as a general rule of thumb, we really need to decide up front if we want to use any hooks inside of our project. Chances are you do, and if you do, then whenever you are trying to insert a new record, update a record or remove a record, you need to first get your entity instance and then call save or update or remove with this entity, as opposed to just trying to save a plain object.
+
+**<span style='color: #bbffff'> Note**
+
+- `save()` and `remove()` are supposed to be called with an entity and hooks will be executed.
+- with `insert()`, `update()`, `delete()`, hooks will not be executed
 <!---
 [comment]: it works with text, you can rename it how you want
 
