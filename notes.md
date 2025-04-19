@@ -788,6 +788,45 @@ Content-Type: application/json
 ```
 
 **<span style='color: #ffdf90'>IMPORTANT:** extra property such as `admin` inside the body of the request are ignored. This is done primarily as a security concern because we don't want to allow users to add in additional properties to incoming requests
+
+## **<span style='color: #6e7a73'>Creating and Saving User Data**
+
+### **<span style='color: #6e7a73'>Creating and Saving a User**
+
+**<span style='color: #b0ffb6'> src/users/users.service.ts**
+
+```typescript
+@Injectable()
+export class UsersService {
+  repo: Repository<User>;
+
+  constructor(repo: Repository<User>) {
+    this.repo = repo;
+  }
+}
+
+// NOTE: identical to:
+@Injectable()
+export class UsersService {
+  constructor(private repo: Repository<User>) { }
+}
+```
+
+```typescript
+constructor(@InjectRepository(User) private repo: Repository<User>) {}
+```
+
+**<span style='color: #bbffff'> Note:** `@InjectRepository(User)` is a bit of an aid to the dependency injection system. This is what is going to tell the dependency injection system that our `UsersService` needs the `userRepository`.
+
+**<span style='color: #ffdf90'>IMPORTANT:**
+
+- when we spoke about dependency injection a little bit ago, we said that the dependency injection system uses this type annotation right here to figure out what instance it needs to inject into this class at runtime.
+- Unfortunately, the dependency injection system does not play nicely with generics, which `<User>` is. So the decorator is required simply because we have to use a generic type.
+
+#### **<span style='color: #6e7a73'>TypeORM Repository API**
+
+- `create()`: makes a new instance of an entity, but does not persist it to the DB
+- `save()`: adds or updates a record to the DB
 <!---
 [comment]: it works with text, you can rename it how you want
 
