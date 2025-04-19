@@ -884,6 +884,20 @@ we want to pass to our `update` method a flexible object to which we can pass on
 
 **<span style='color: #ffb3b3'>Error:** whenever we receive a request, every single part of the URL is a string, even if we think that it looks like a number. *NestJS* is not going to automatically parse the incoming request into a string.
 
+### **<span style='color: #6e7a73'>A Few Notes on Exceptions**
+
+**<span style='color: #b0ffb6'> src/users/users.service.ts**
+
+**<span style='color: #bbffff'> Note:** `if (!user) throw new Error('user not found!');`; we would not throw a plain error object because *NestJS* doesn't really know how to extract any information from that.
+
+Instead, we should be throwing exceptions that are implemented or created by *NestJS*, such as the notfound exception, the bad request exception.
+
+**<span style='color: #bbffff'> Note:** In our previous app, we were throwing errors from the controller and not from the service
+
+![image info](./_notes/9_sc3.png)
+
+**<span style='color: #ffb3b3'>Error:** To tackle the above issue that `NotFoundException` would not be caught in other protocols than `HTTP` controllers (websocket, gprc), a very easy thing to do  would be to implement your own exception filter.
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
