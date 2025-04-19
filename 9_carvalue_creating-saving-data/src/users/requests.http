@@ -1,0 +1,11 @@
+### Create a new user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "test1234"
+  # "admin": true
+  # "email": "test.com", //ERROR: validation of email failed
+  # "password": "" //ERROR: password cannot be empty
+}
