@@ -827,6 +827,28 @@ constructor(@InjectRepository(User) private repo: Repository<User>) {}
 
 - `create()`: makes a new instance of an entity, but does not persist it to the DB
 - `save()`: adds or updates a record to the DB
+
+### **<span style='color: #6e7a73'>Quick breathe and review**
+
+![image info](./_notes/9_sc1.png)
+
+**<span style='color: #bbffff'> Note:** you might be kind of curious why would we do validation that is tied to the *entity* as opposed to inside of our *DTO*?
+
+Well, there are a couple of scenarios where we would want to do that and we're going to take a look at some of them later on inside this application.
+
+Right now, just understand that in general, we do want to first create an instance of our entity and then save it off, as opposed to just passing off our data to be saved directly to the save method.
+
+```typescript
+create(email: string, password: string) {
+  const user = this.repo.create({ email, password });
+  return this.repo.save(user);
+}
+
+// NOTE: rather than:
+create(email: string, password: string) {
+  return this.repo.save({email, password});
+}
+```
 <!---
 [comment]: it works with text, you can rename it how you want
 
