@@ -867,6 +867,10 @@ Hooks in *TypeORM* allow us to define functions on an entity that will be called
 
 - `save()` and `remove()` are supposed to be called with an entity and hooks will be executed.
 - with `insert()`, `update()`, `delete()`, hooks will not be executed
+
+### **<span style='color: #6e7a73'>Querying for Data**
+
+`findOne` always return one result or `null`, while `find` returns an array of results matching that search criteria (or empty array if no matches).
 <!---
 [comment]: it works with text, you can rename it how you want
 
