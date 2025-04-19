@@ -863,7 +863,7 @@ Hooks in *TypeORM* allow us to define functions on an entity that will be called
 - Hooks are not executed if you call `save()` with a plain object instead of the entity created via `create()`.
 - So as a general rule of thumb, we really need to decide up front if we want to use any hooks inside of our project. Chances are you do, and if you do, then whenever you are trying to insert a new record, update a record or remove a record, you need to first get your entity instance and then call save or update or remove with this entity, as opposed to just trying to save a plain object.
 
-**<span style='color: #bbffff'> Note**
+**<span style='color: #ffdf90'>IMPORTANT**
 
 - `save()` and `remove()` are supposed to be called with an entity and hooks will be executed.
 - with `insert()`, `update()`, `delete()`, hooks will not be executed
@@ -871,6 +871,14 @@ Hooks in *TypeORM* allow us to define functions on an entity that will be called
 ### **<span style='color: #6e7a73'>Querying for Data**
 
 `findOne` always return one result or `null`, while `find` returns an array of results matching that search criteria (or empty array if no matches).
+
+### **<span style='color: #6e7a73'>Updating Data**
+
+we want to pass to our `update` method a flexible object to which we can pass one or more attribute of `User` entity.
+
+**<span style='color: #b0ffb6'> src/users/users.service.ts:** `update(id: number, attrs: Partial<User>) {}`
+
+`Object.assign(user, attrs);` takes all the properties of the second argument and copies it the object passed in, overriding the properties already there.
 <!---
 [comment]: it works with text, you can rename it how you want
 
