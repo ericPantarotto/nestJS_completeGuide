@@ -9,3 +9,9 @@ Content-Type: application/json
   # "email": "test.com", //ERROR: validation of email failed
   # "password": "" //ERROR: password cannot be empty
 }
+
+### Find a particular user with a given ID
+GET http://localhost:3000/auth/2
+
+### Find all users with a given email
+GET http://localhost:3000/auth?email=test@test.com

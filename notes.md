@@ -879,6 +879,11 @@ we want to pass to our `update` method a flexible object to which we can pass on
 **<span style='color: #b0ffb6'> src/users/users.service.ts:** `update(id: number, attrs: Partial<User>) {}`
 
 `Object.assign(user, attrs);` takes all the properties of the second argument and copies it the object passed in, overriding the properties already there.
+
+### **<span style='color: #6e7a73'>Finding and Filtering Records**
+
+**<span style='color: #ffb3b3'>Error:** whenever we receive a request, every single part of the URL is a string, even if we think that it looks like a number. *NestJS* is not going to automatically parse the incoming request into a string.
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
