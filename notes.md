@@ -898,6 +898,9 @@ Instead, we should be throwing exceptions that are implemented or created by *Ne
 
 **<span style='color: #ffb3b3'>Error:** To tackle the above issue that `NotFoundException` would not be caught in other protocols than `HTTP` controllers (websocket, gprc), a very easy thing to do  would be to implement your own exception filter.
 
+## **<span style='color: #6e7a73'>Custom Data Serialization**
+
+### **<span style='color: #6e7a73'>Excluding Response Properties**
 <!---
 [comment]: it works with text, you can rename it how you want
 

@@ -1,0 +1,30 @@
+### Create a new user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "test1234"
+  # "admin": true
+  # "email": "test.com", //ERROR: validation of email failed
+  # "password": "" //ERROR: password cannot be empty
+}
+
+### Find a particular user with a given ID
+GET http://localhost:3000/auth/3
+
+### Find all users with a given email
+GET http://localhost:3000/auth?email=test@test.com
+
+### Delete a particular user with a given ID
+DELETE http://localhost:3000/auth/2
+
+
+### Update a particular user with a given ID
+PATCH  http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+  "email": "test2@test.com",
+  "password": "test1234!"
+}
