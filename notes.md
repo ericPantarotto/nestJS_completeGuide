@@ -933,6 +933,27 @@ We can assign interceptors to either:
 - We make use of `extends` whenever we are subclassing an existing class.
 - We make use of `implements` anytime that we want to create a new class that satisfies all the requirements of either an abstract class or an interface. So by adding on `implements NestInterceptor`, TypeScript is going to check all the methods that exist in this interface.
 
+**<span style='color: #b0ffb6'> src/interceptors/serialize.interceptor.jsx**
+
+```typescript
+export class SerializeInterceptor implements NestInterceptor {
+  //NOTE: Run something before a request is handled by the request handler
+  intercept(context: ExecutionContext, handler: CallHandler): Observable<any> {
+    console.log('Im running before the handler', context);
+
+    return handler.handle().pipe(
+      map((data: any) => {
+        //NOTE: Run something before the response is sent out
+        console.log('Im running before response is sent out', data);
+      }),
+    );
+  }
+}
+```
+
+### **<span style='color: #6e7a73'>Serialization in the Interceptor**
+
+`import { Expose } from 'class-transformer';` is the exact opposite of `@Exclude()` decorator.
 <!---
 [comment]: it works with text, you can rename it how you want
 
