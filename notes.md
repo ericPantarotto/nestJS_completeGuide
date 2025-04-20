@@ -901,6 +901,8 @@ Instead, we should be throwing exceptions that are implemented or created by *Ne
 ## **<span style='color: #6e7a73'>Custom Data Serialization**
 
 ### **<span style='color: #6e7a73'>Excluding Response Properties**
+
+![image info](./_notes/10_sc1.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
