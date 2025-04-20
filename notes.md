@@ -903,6 +903,20 @@ Instead, we should be throwing exceptions that are implemented or created by *Ne
 ### **<span style='color: #6e7a73'>Excluding Response Properties**
 
 ![image info](./_notes/10_sc1.png)
+
+### **<span style='color: #6e7a73'>Solution to Serialization**
+
+![image info](./_notes/10_sc2.png)
+
+**<span style='color: #bbffff'> Note:** we really need to customize that `@Exclude()` directive and how it gets applied on the `user.entity` instance based upon which route handler is being accessed. And that is really not possible by using the approach recommended by *NestJS*.
+
+There is a slightly different approach that's going to address this whole issue.
+
+### **<span style='color: #6e7a73'>Custom Interceptor**
+
+![image info](./_notes/10_sc3.png)
+
+We will then have a separate DTO for each route, with a different set of serialization rules
 <!---
 [comment]: it works with text, you can rename it how you want
 
