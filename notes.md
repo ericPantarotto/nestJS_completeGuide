@@ -912,11 +912,27 @@ Instead, we should be throwing exceptions that are implemented or created by *Ne
 
 There is a slightly different approach that's going to address this whole issue.
 
-### **<span style='color: #6e7a73'>Custom Interceptor**
+#### **<span style='color: #6e7a73'>Custom Interceptor**
 
 ![image info](./_notes/10_sc3.png)
 
 We will then have a separate DTO for each route, with a different set of serialization rules
+
+### **<span style='color: #6e7a73'>How to Build Interceptors**
+
+We can assign interceptors to either:
+
+- routes
+- or controller; and so the interceptor will run on every handler of the controller
+- globally to an entire application
+
+![image info](./_notes/10_sc4.png)
+
+**<span style='color: #ffdf90'>IMPORTANT:** **Implements is not the same as extends**.
+
+- We make use of `extends` whenever we are subclassing an existing class.
+- We make use of `implements` anytime that we want to create a new class that satisfies all the requirements of either an abstract class or an interface. So by adding on `implements NestInterceptor`, TypeScript is going to check all the methods that exist in this interface.
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
