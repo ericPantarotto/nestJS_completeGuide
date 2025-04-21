@@ -998,6 +998,18 @@ So then if this malicious user ever got access to our database in some way, they
 during the sign up process we are generating that salt and storing it inside of our database. And then during the sign in process we're going to go into the database, find that salt and use it inside of our hashed password hashing process.
 
 in order to do a rainbow table attack, which all revolves around this idea of kind of **pre-calculating these different hashes ahead of time**. Someone to put together this rainbow table attack would now have to do a series of different entries where they take a password and then they guess a salt. But the key thing here is that the user or this malicious person would have to regenerate this entire rainbow table with a different salt for every different possible salt there is in the world out there.
+
+### **<span style='color: #6e7a73'>Salting and Hashing the password**
+
+**<span style='color: #bbffff'> Note:** The plain version of *script* returns callback, we're going to wrap it up with *promisify*, which returns promises, rather than callbacks
+
+The eight right here means that our buffer is going to have eight bytes worth of data inside of it.
+
+**<span style='color: #b0ffb6'> auth.service.ts** `const salt = randomBytes(8).toString('hex');`
+
+Every one byte of data turns into two characters when we convert it to Hex. So our salt is going to be a 16 character long string.
+
+as we use `promisify`, TypeScript has no idea what `scrypt` function returns, to help it, we wrap the expected type with the `as` clause: `const hash = (await scrypt(password, salt, 32)) as Buffer;`
 <!---
 [comment]: it works with text, you can rename it how you want
 
