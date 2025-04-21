@@ -3,7 +3,7 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "test4@test.com",
   "password": "test1234"
   # "admin": true
   # "email": "test.com", //ERROR: validation of email failed
@@ -25,6 +25,6 @@ PATCH  http://localhost:3000/auth/3
 Content-Type: application/json
 
 {
-  "email": "test2@test.com",
+  "email": "test@test.com",
   "password": "test1234!!"
 }
