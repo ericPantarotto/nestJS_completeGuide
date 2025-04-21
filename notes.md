@@ -627,7 +627,7 @@ This class could have all the required methods like *findOne, findAll and create
 
 #### **<span style='color: #6e7a73'>using Typescript Synthetic sugar with Dependency Injection**
 
-**<span style='color: #bbffff'> Note:**The 2 below are absolutely equivalent and the later saves a lot of boiler plate code
+**<span style='color: #bbffff'>Note:** The 2 below are absolutely equivalent and the later saves a lot of boiler plate code
 
 ```typescript
 export class MessagesService {
@@ -959,11 +959,17 @@ export class SerializeInterceptor implements NestInterceptor {
 
 **<span style='color: #ffc5a6'>Link:** [https://medium.com/@raphael3213/serialize-interceptors-in-nestjs-b99c1e347ba4]
 
-## **<span style='color: #6e7a73'>Authentication from scratch+**
+## **<span style='color: #6e7a73'>Authentication from scratch**
 
 ### **<span style='color: #6e7a73'>Authentication overview**
 
 ![image info](./_notes/11_sc1.png)
+
+![image info](./_notes/11_sc2.png)
+
+### **<span style='color: #6e7a73'>Reminder on Service setup**
+
+![image info](./_notes/11_sc3.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
