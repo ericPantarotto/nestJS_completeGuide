@@ -954,6 +954,16 @@ export class SerializeInterceptor implements NestInterceptor {
 ### **<span style='color: #6e7a73'>Serialization in the Interceptor**
 
 `import { Expose } from 'class-transformer';` is the exact opposite of `@Exclude()` decorator.
+
+### **<span style='color: #6e7a73'>A Bit of Type Safety Around Serialize**
+
+**<span style='color: #ffc5a6'>Link:** [https://medium.com/@raphael3213/serialize-interceptors-in-nestjs-b99c1e347ba4]
+
+## **<span style='color: #6e7a73'>Authentication from scratch+**
+
+### **<span style='color: #6e7a73'>Authentication overview**
+
+![image info](./_notes/11_sc1.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
