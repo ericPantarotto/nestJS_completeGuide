@@ -970,6 +970,34 @@ export class SerializeInterceptor implements NestInterceptor {
 ### **<span style='color: #6e7a73'>Reminder on Service setup**
 
 ![image info](./_notes/11_sc3.png)
+
+### **<span style='color: #6e7a73'>Understanding password hashing**
+
+![image info](./_notes/11_sc4.png)
+
+![image info](./_notes/11_sc5.png)
+
+![image info](./_notes/11_sc6.png)
+
+![image info](./_notes/11_sc7.png)
+
+#### **<span style='color: #6e7a73'>Rainbow Table attack**
+
+The idea behind a rainbow table attack is that some malicious person out there is going to get a list of all the different most popular passwords across the world.
+
+They're then going to run through this list of maybe hundreds or thousands or even millions of different very common passwords. And they're going to calculate the hash of every one of these very common passwords ahead of time. they can just store this table. They never have to run this calculation again.
+
+So then if this malicious user ever got access to our database in some way, they could take a look at our hashed password. They could then compare our stored hashed password right here against all these pre-calculated hashes that they ran ahead of time.
+
+#### **<span style='color: #6e7a73'>Salt**
+
+![image info](./_notes/11_sc8.png)
+
+![image info](./_notes/11_sc9.png)
+
+during the sign up process we are generating that salt and storing it inside of our database. And then during the sign in process we're going to go into the database, find that salt and use it inside of our hashed password hashing process.
+
+in order to do a rainbow table attack, which all revolves around this idea of kind of **pre-calculating these different hashes ahead of time**. Someone to put together this rainbow table attack would now have to do a series of different entries where they take a password and then they guess a salt. But the key thing here is that the user or this malicious person would have to regenerate this entire rainbow table with a different salt for every different possible salt there is in the world out there.
 <!---
 [comment]: it works with text, you can rename it how you want
 
