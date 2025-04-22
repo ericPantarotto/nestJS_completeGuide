@@ -1025,6 +1025,11 @@ app.use(cookieSession({ keys: ['randomCookieString'] }));
 
 **<span style='color: #ffb3b3'>Error:** you have to add to `tsconfig.json`:  "esModuleInterop": true
 
+### **<span style='color: #6e7a73'>Signing in a User**
+
+**<span style='color: #bbffff'> Note:** Whenever we try to make a change to that session object, `cookie-session` is going to take a look at whatever change we just made and if you didn't actually change any properties, if they're all identical, it's not going to send back any updated cookie in the response.
+
+Between the two different request handlers `/signup` and `/signin`, because there have been no actual changes to the session object, whenever we make a request to the second one, we're not going to see any updated cookie come back because there is no updated cookie.
 <!---
 [comment]: it works with text, you can rename it how you want
 

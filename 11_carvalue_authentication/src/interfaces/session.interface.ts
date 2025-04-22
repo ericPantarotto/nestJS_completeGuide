@@ -1,3 +1,3 @@
 export interface SessionInterface {
-  color: string;
+  userId: number;
 }

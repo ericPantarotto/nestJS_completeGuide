@@ -3,19 +3,16 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "test4@test.com",
+  "email": "testcookie@test.com",
   "password": "test1234"
-  # "admin": true
-  # "email": "test.com", //ERROR: validation of email failed
-  # "password": "" //ERROR: password cannot be empty
 }
 
-### Signin a user
+### Sign in as an existing user
 POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-  "email": "test5@test.com",
+  "email": "testcookie@test.com",
   "password": "test1234"
 }
 
@@ -39,8 +36,8 @@ Content-Type: application/json
 }
 
 ### Set a color
-GET  http://localhost:3000/auth/colors/red
+# GET  http://localhost:3000/auth/colors/red
 
 ### Get the color
-GET  http://localhost:3000/auth/colors/
+# GET  http://localhost:3000/auth/colors/
 
