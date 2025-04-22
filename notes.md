@@ -1106,7 +1106,19 @@ we can apply this decorator to an entire controller and that makes sure that we'
 export class UsersController {}
 ```
 
+### **<span style='color: #6e7a73'>Globally Scoped Interceptors**
 
+**<span style='color: #ffb3b3'>Wrong Pattern**
+
+![image info](./_notes/11_sc14.png)
+
+#### **<span style='color: #6e7a73'>Globally Scoped Interceptors**
+
+![image info](./_notes/11_sc15.png)
+
+Now, the one downside to this approach is that there might be some controllers out there that don't care about who the current user is.
+
+In those cases, we are going to make a request to our database to find the current user, even though the given controller might not care about it, or even individual handlers might not care about the current user. So there are definitely upsides and downsides to this approach.
 <!---
 [comment]: it works with text, you can rename it how you want
 
