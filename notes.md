@@ -1071,6 +1071,26 @@ We're making a parameter decorator, and this decorator cannot reach into the sys
 ![image info](./_notes/11_sc12.png)
 
 ![image info](./_notes/11_sc13.png)
+
+**<span style='color: #b0ffb6'> src/users/interceptors/current-user.interceptor.ts**
+
+So now we've got the user, but what are we going to actually do with it? We need to somehow communicate the user we found down into the decorator. the little trick we're going to use is to just take the user we found and assign it to the `request` object because the request object can be retrieved or we can get access to that object inside of our decorator.
+
+**<span style='color: #bbffff'> Note:** Couldn't we just use the interceptor by itself? Well, yes, we absolutely could.
+
+But remember, one of the requirements of our controller one one of the things that I said was that I want to specifically have a decorator called `@CurrentUser()`, and that thing should give us our user.
+
+Alternative with only an interceptor would be
+
+**<span style='color: #b0ffb6'> src/users/users.controller.ts**
+
+```typescript
+@Get('/whoami')
+whoAmI(@Request() request: Request){
+  console.log(request.currentUser)
+}
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
