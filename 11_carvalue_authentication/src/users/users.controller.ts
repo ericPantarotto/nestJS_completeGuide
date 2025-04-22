@@ -29,7 +29,7 @@ export class UsersController {
 
   @Get('whoami')
   whoAmI(@Session() session: SessionInterface) {
-    return this.usersService.findOne(session.userId);
+    return this.usersService.findOne(session.userId!);
   }
 
   @Post('/signup')
@@ -50,6 +50,11 @@ export class UsersController {
     const user = await this.authService.signin(body.email, body.password);
     session.userId = user.id;
     return user;
+  }
+
+  @Post('/signout')
+  signout(@Session() session: SessionInterface) {
+    session.userId = null;
   }
 
   @Get('/:id')
