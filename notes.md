@@ -1091,6 +1091,22 @@ whoAmI(@Request() request: Request){
 }
 ```
 
+### **<span style='color: #6e7a73'>Connecting an Interceptor to Dependency Injection**
+
+Now, the key thing to keep in mind here is that whenever we want to use that decorator, we first have to run the interceptor. So the interceptor has to run first to make sure that we assign the current user to the request object. After the interceptor runs, then our decorator can run and return request dot current user.
+
+we can apply this decorator to an entire controller and that makes sure that we're going to run a given interceptor before any handler inside of that controller.
+
+**<span style='color: #b0ffb6'> src/users/users.controller.ts**
+
+```typescript
+@Controller('auth')
+@Serialize(UserDto)
+@UseInterceptors(CurrentUserInterceptor)
+export class UsersController {}
+```
+
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
