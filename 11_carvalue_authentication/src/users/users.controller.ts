@@ -9,8 +9,10 @@ import {
   Patch,
   Post,
   Query,
+  Session,
 } from '@nestjs/common';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
+import { SessionInterface } from 'src/interfaces/session.interface';
 import { AuthService } from './auth.service';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
@@ -27,16 +29,25 @@ export class UsersController {
 
   @Post('/signup')
   async createUser(@Body() body: CreateUserDto) {
-    // console.log(body);
-    // await this.usersService.create(body.email, body.password);
-    // return { message: 'User created' };
-
     return await this.authService.signup(body.email, body.password);
   }
 
   @Post('/signin')
   signin(@Body() body: CreateUserDto) {
     return this.authService.signin(body.email, body.password);
+  }
+
+  @Get('/colors/:color')
+  setColor(
+    @Param('color') color: string,
+    @Session() session: SessionInterface,
+  ) {
+    session.color = color;
+  }
+
+  @Get('/colors')
+  getColor(@Session() session: SessionInterface) {
+    return session.color;
   }
 
   @Get('/:id')

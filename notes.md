@@ -1016,6 +1016,15 @@ as we use `promisify`, TypeScript has no idea what `scrypt` function returns, to
 ![image info](./_notes/11_sc10.png)
 
 `npm i cookie-session @types/cookie-session`
+
+**<span style='color: #b0ffb6'> main.ts/bootstrap()**
+
+```typescript
+app.use(cookieSession({ keys: ['randomCookieString'] }));
+```
+
+**<span style='color: #ffb3b3'>Error:** you have to add to `tsconfig.json`:  "esModuleInterop": true
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
