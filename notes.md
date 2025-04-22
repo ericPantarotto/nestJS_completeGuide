@@ -1010,6 +1010,12 @@ The eight right here means that our buffer is going to have eight bytes worth of
 Every one byte of data turns into two characters when we convert it to Hex. So our salt is going to be a 16 character long string.
 
 as we use `promisify`, TypeScript has no idea what `scrypt` function returns, to help it, we wrap the expected type with the `as` clause: `const hash = (await scrypt(password, salt, 32)) as Buffer;`
+
+### **<span style='color: #6e7a73'>Setting up Sessions**
+
+![image info](./_notes/11_sc10.png)
+
+`npm i cookie-session @types/cookie-session`
 <!---
 [comment]: it works with text, you can rename it how you want
 
