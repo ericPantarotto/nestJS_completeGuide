@@ -27,6 +27,11 @@ export class UsersController {
     private authService: AuthService,
   ) {}
 
+  @Get('whoami')
+  whoAmI(@Session() session: SessionInterface) {
+    return this.usersService.findOne(session.userId);
+  }
+
   @Post('/signup')
   async createUser(
     @Body() body: CreateUserDto,
