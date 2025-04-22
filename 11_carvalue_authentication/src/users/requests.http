@@ -10,6 +10,15 @@ Content-Type: application/json
   # "password": "" //ERROR: password cannot be empty
 }
 
+### Signin a user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "test5@test.com",
+  "password": "test1234"
+}
+
 ### Find a particular user with a given ID
 GET http://localhost:3000/auth/3
 
