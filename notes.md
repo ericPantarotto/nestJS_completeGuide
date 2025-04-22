@@ -1034,6 +1034,43 @@ Between the two different request handlers `/signup` and `/signin`, because ther
 ### **<span style='color: #6e7a73'>Two Automation Tools**
 
 ![image info](./_notes/11_sc11.png)
+
+The data argument is going to contain any data or any argument that we provide to our decorator when we actually make use of it.
+
+**<span style='color: #b0ffb6'> users.controller.ts**
+
+### **<span style='color: #6e7a73'>Why a Decorator and Interceptor**
+
+```typescript
+ @Get('whoami')
+  whoAmI(@CurrentUser('This would be the data') user: string) {
+    return user;
+  }
+```
+
+**<span style='color: #b0ffb6'> current-user.decorator.ts**
+
+The current user decorator is going to be just the decorator by itself. No arguments, nothing like that. A better type annotation for data than any might be `never`.
+
+```typescript
+export const CurrentUser = createParamDecorator(
+  (data: any, context: ExecutionContext) => {
+    return 'hi there!';
+  },
+);
+```
+
+**<span style='color: #ffdf90'>IMPORTANT:** our user service is a part of the dependency injection system. We can't just import the `usersService` and create a new instance of it ourselves. The service makes use of the user's repository and that user's repository is set up only through dependency injection.
+
+Unfortunately, we cannot make use of dependency injection with a parameter decorator.
+
+We're making a parameter decorator, and this decorator cannot reach into the system in any way and try to get access to some instance of anything inside there. So we currently have a decorator that just plain can't get access to our `usersService`.
+
+**<span style='color: #ffb3b3'>Error**
+
+![image info](./_notes/11_sc12.png)
+
+![image info](./_notes/11_sc13.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 

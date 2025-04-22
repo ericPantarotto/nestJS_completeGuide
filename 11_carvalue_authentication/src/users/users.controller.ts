@@ -14,11 +14,11 @@ import {
 import { Serialize } from 'src/interceptors/serialize.interceptor';
 import { SessionInterface } from 'src/interfaces/session.interface';
 import { AuthService } from './auth.service';
-import { CurrentUser } from './decorators/current-user.decorator';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { UserDto } from './dtos/user.dto';
 import { UsersService } from './users.service';
+import { CurrentUser } from './decorators/current-user.decorator';
 
 @Serialize(UserDto)
 @Controller('auth')
