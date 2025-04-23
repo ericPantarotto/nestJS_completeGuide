@@ -1119,6 +1119,20 @@ export class UsersController {}
 Now, the one downside to this approach is that there might be some controllers out there that don't care about who the current user is.
 
 In those cases, we are going to make a request to our database to find the current user, even though the given controller might not care about it, or even individual handlers might not care about the current user. So there are definitely upsides and downsides to this approach.
+
+## **<span style='color: #6e7a73'>Getting Started with Unit Testing**
+
+### **<span style='color: #6e7a73'>Testing Overview**
+
+![image info](./_notes/12_sc1.png)
+
+We're going to use the dependency injection system to avoid having to create all these different repositories, these different dependencies.
+
+So the trick is we are going to make a fake copy of the user's service. So this will be a temporary class that we define inside of our test file that has only the methods we care about, defined on it.
+
+Once we create that class, we're then going to create an instance of our authentication service using that fake user service.
+
+We are going to create a small testing DI container where we kind of short circuit this entire dependency list.
 <!---
 [comment]: it works with text, you can rename it how you want
 
