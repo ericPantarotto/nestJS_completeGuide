@@ -1133,6 +1133,51 @@ So the trick is we are going to make a fake copy of the user's service. So this 
 Once we create that class, we're then going to create an instance of our authentication service using that fake user service.
 
 We are going to create a small testing DI container where we kind of short circuit this entire dependency list.
+
+### **<span style='color: #6e7a73'>Testing Setup**
+
+![image info](./_notes/12_sc2.png)
+
+`npm run test:watch`, ribbon menu to run all test, or other options, `q` to exit
+
+to have the tests recognized in VSCode Test Viewer:
+
+- `npm install --save-dev jest @nestjs/testing @types/jest ts-jest`
+- **<span style='color: #b0ffb6'> package.json**, removed the `jest` section
+- add `jest.config.ts` at the root of the project (you can have only 1 config, so you could stay with default package.json, but integration with VSCode test view isn't as good)
+- **<span style='color: #b0ffb6'> settings.json**, pass the current project you are testing in `jest.rootPath`
+
+```json
+"jest.jestCommandLine": "npx jest --config jest.config.ts",
+"jest.rootPath": "12_carvalue_unit-testing"
+```
+
+- `Ctrl+Shift+P`, `Jest: Start All Runners`
+
+You can then either:
+
+- from the terminal: `npx jest --watch` or `npx jest`
+- use VSCode Test View
+
+**<span style='color: #bbffff'> Note:** Define in `settings.json`, your preferred *runMode*:
+
+`"jest.runMode": "on-demand"`
+
+**<span style='color: #ffc5a6'>Link** [https://github.com/jest-community/vscode-jest#runmode]
+
+You can either run all tests, or choose to run a single file.
+
+Back to our `auth.service.spec.ts` unit test, we get the expected error message: *Nest can't resolve dependencies of the AuthService (?). Please make sure that the argument UsersService at index [0] is available in the RootTestModule context.*
+
+Potential solutions:
+
+- Is RootTestModule a valid NestJS module?
+- If UsersService is a provider, is it part of the current RootTestModule?
+- If UsersService is exported from a separate @Module, is that module imported within RootTestModule?
+
+  @Module({
+    imports: [ /*the Module containing UsersService*/ ]
+  })
 <!---
 [comment]: it works with text, you can rename it how you want
 
