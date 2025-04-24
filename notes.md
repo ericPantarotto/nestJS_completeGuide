@@ -772,7 +772,7 @@ And this is all done automatically through type ORM with the use of those entiti
 
 `npm i class-validator class-transformer`
 
-### **<span style='color: #6e7a73'>Manual Route Testing*
+### **<span style='color: #6e7a73'>Manual Route Testing**
 
 **<span style='color: #aacb73'> src/users/requests.http**
 
