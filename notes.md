@@ -1264,6 +1264,12 @@ to solve this, in your controller:
 - Instead of 'src/guards/auth.guard' change it to '../guards/auth.guard'
 - better approach:  **<span style='color: #aacb73'> jest.config.ts**  
 `moduleNameMapper: { '^src/(.*)$': '<rootDir>/$1' },`
+
+### **<span style='color: #6e7a73'>Not Super Effective Tests**
+
+With our mock implementation of the `UsersService` put together, we can now test all the different methods inside of our controller that only use either `find` or `findOne`.
+
+**<span style='color: #8accb3'> Note:** We are testing just the method by itself without any decorators present. If you want to test the decorators, then we have to write out an end to end test, which you'll recall is a very different kind of test.
 <!---
 [comment]: it works with text, you can rename it how you want
 
