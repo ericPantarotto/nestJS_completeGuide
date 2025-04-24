@@ -1178,6 +1178,33 @@ Potential solutions:
   @Module({
     imports: [ /*the Module containing UsersService*/ ]
   })
+
+### **<span style='color: #6e7a73'>Yes, Testing is confusing**
+
+We might recall back when we were first discussing dependency injection, the providers array is a listing of all the different classes that we might want to inject into our container.
+
+![image info](./_notes/12_sc3.png)
+
+Authservice is going to tell the container that at some point in time we are going to want to create an instance of the auth service. The container is going to take a look at that class and understand all that classes, dependencies.
+
+![image info](./_notes/12_sc4.png)
+
+Where things get really interesting is the second element inside that array. So this is an object that is going to slightly trick or kind of reroute the system.
+
+It's going to change how different classes or different things get resolved. Whenever we ask for a copy of specifically the `AuthService`,  if anyone asks for a copy of the user service, then give them the value `fakeUsersService`.
+
+we ask the container to create an instance of the auth service: `const service = module.get(AuthService);`
+
+rather than reaching out and calling the real `find` and the real `create`, which required the use of the user's repository and *SQLite*, we're going to instead run these very fake implemented methods instead.
+
+```typescript
+const fakeUsersService = {
+  find: () => Promise.resolve([]),
+  create: (email: string, password: string) =>
+    Promise.resolve({ id: 1, email, password }),
+};
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
