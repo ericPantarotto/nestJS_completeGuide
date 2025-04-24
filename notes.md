@@ -1249,6 +1249,21 @@ create: (email: string, password: string) =>
   Promise.resolve({ id: 1, email, password } as User),
 ```
 
+### **<span style='color: #6e7a73'>Unit testing a controller**
+
+So whenever we unit test a controller, we're not really quite so much going to test out the different **decorators** that we're applying to a method.
+
+### **<span style='color: #6e7a73'>More mock implementations**
+
+**<span style='color: #aacb73'> users.controller.spec.ts**
+
+**<span style='color: #ff3b3b'>Error:**  *Cannot find module 'src/guards/auth.guard' from 'users/users.controller.ts'*
+
+to solve this, in your controller:
+
+- Instead of 'src/guards/auth.guard' change it to '../guards/auth.guard'
+- better approach:  **<span style='color: #aacb73'> jest.config.ts**  
+`moduleNameMapper: { '^src/(.*)$': '<rootDir>/$1' },`
 <!---
 [comment]: it works with text, you can rename it how you want
 
@@ -1275,4 +1290,5 @@ create: (email: string, password: string) =>
 -->
 
 <!-- markdownlint-enable MD033 -->
+<!-- markdownlint-enable MD024 -->
 <!-- markdownlint-enable MD024 -->

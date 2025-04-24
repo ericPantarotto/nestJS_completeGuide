@@ -10,4 +10,5 @@ module.exports = {
   testEnvironment: 'node',
   maxWorkers: '50%',
   testTimeout: 10000,
+  moduleNameMapper: { '^src/(.*)$': '<rootDir>/$1' },
 };
