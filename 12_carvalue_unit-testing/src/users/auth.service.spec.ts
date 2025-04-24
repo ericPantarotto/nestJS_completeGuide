@@ -52,7 +52,36 @@ describe('AuthService', () => {
 
   it('throws an error if signin is called with an unused email', async () => {
     await expect(
-      service.signin('notfound@asdlfkj.com', 'testFailed'),
+      service.signin('anyemail@test.com', 'testFailed'),
     ).rejects.toThrow(NotFoundException);
+  });
+
+  it('throws if an invalid password is provided', async () => {
+    fakeUsersService.find = () =>
+      Promise.resolve([
+        { email: 'oneuser@test.com', password: 'testFailed' } as User,
+      ]);
+
+    await expect(
+      service.signin('anyemail@test.com', 'differentPassword'),
+    ).rejects.toThrow(BadRequestException);
+  });
+
+  it('returns a user if correct password is provided', async () => {
+    // NOTE: get the hashed password from the console.log: 1df7739c207e0a9d.b0cd0b086fdc1087dce5e2fee34aa585e7eb755b70b327ba5ef42725edd51ba0
+    // const user = await service.signup('anyemail@test.com', 'test1234');
+    // console.log(user);
+
+    fakeUsersService.find = () =>
+      Promise.resolve([
+        {
+          email: 'anyemail@test.com',
+          password:
+            '1df7739c207e0a9d.b0cd0b086fdc1087dce5e2fee34aa585e7eb755b70b327ba5ef42725edd51ba0',
+        } as User,
+      ]);
+
+    const user = await service.signin('anyemail@test.com', 'test1234');
+    expect(user.email).toEqual('anyemail@test.com');
   });
 });
