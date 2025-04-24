@@ -9,21 +9,11 @@ describe('AuthService', () => {
   let fakeUsersService: Partial<UsersService>;
 
   beforeEach(async () => {
-    const users: User[] = [];
+    //NOTE: Create a fake copy of the users service
     fakeUsersService = {
-      find: (email: string) =>
-        Promise.resolve(users.filter((user) => user.email === email)),
-      create: (email: string, password: string) => {
-        const user = {
-          id: Math.floor(Math.random() * 10000),
-          email,
-          password,
-        } as User;
-
-        users.push(user);
-
-        return Promise.resolve(user);
-      },
+      find: () => Promise.resolve([]),
+      create: (email: string, password: string) =>
+        Promise.resolve({ id: 1, email, password } as User),
     };
 
     const module = await Test.createTestingModule({
@@ -50,9 +40,13 @@ describe('AuthService', () => {
   });
 
   it('throws an error if user signs up with email that is in use', async () => {
-    await service.signup('anyemail@test.com', 'test1234');
+    fakeUsersService.find = () =>
+      Promise.resolve([
+        { id: 1, email: 'userfound@test.com', password: 'testFailed' } as User,
+      ]);
+
     await expect(
-      service.signup('anyemail@test.com', 'test1234'),
+      service.signup('userfound@test.com', 'testFailed'),
     ).rejects.toThrow(BadRequestException);
   });
 
@@ -63,15 +57,29 @@ describe('AuthService', () => {
   });
 
   it('throws if an invalid password is provided', async () => {
-    await service.signup('anyemail@test.com', 'test1234');
+    fakeUsersService.find = () =>
+      Promise.resolve([
+        { email: 'oneuser@test.com', password: 'testFailed' } as User,
+      ]);
 
     await expect(
-      service.signin('anyemail@test.com', 'incorrectPassword'),
+      service.signin('anyemail@test.com', 'differentPassword'),
     ).rejects.toThrow(BadRequestException);
   });
 
   it('returns a user if correct password is provided', async () => {
-    await service.signup('anyemail@test.com', 'test1234');
+    // NOTE: get the hashed password from the console.log: 1df7739c207e0a9d.b0cd0b086fdc1087dce5e2fee34aa585e7eb755b70b327ba5ef42725edd51ba0
+    // const user = await service.signup('anyemail@test.com', 'test1234');
+    // console.log(user);
+
+    fakeUsersService.find = () =>
+      Promise.resolve([
+        {
+          email: 'anyemail@test.com',
+          password:
+            '1df7739c207e0a9d.b0cd0b086fdc1087dce5e2fee34aa585e7eb755b70b327ba5ef42725edd51ba0',
+        } as User,
+      ]);
 
     const user = await service.signin('anyemail@test.com', 'test1234');
     expect(user.email).toEqual('anyemail@test.com');
