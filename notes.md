@@ -1284,8 +1284,16 @@ For each end to end test, a new server is created for the test, and the app enti
 **<span style='color: #aacb73'> src/test/jest.e2e.json**
 
 ```json
-"moduleNameMapper": { "^src/(.*)$": "<rootDir>../src/$1"
+"moduleNameMapper": { "^src/(.*)$": "<rootDir>/../src/$1"
 ```
+
+**<span style='color: #ffcd58'>IMPORTANT:**
+
+- `npm run test` will run the unit test only, the equivalent of `npx jest`
+- `npm run test:e2e` will run integration test only. the `npx` equivalent is: `npx jest test/app.e2e-spec.ts --config test/jest-e2e.json`
+- for VSCode Test View, `settings.json` takes only 1 configuration file
+  - "jest.jestCommandLine": "npx jest --config test/jest-e2e.json",
+  - "jest.jestCommandLine": "npx jest --config jest.config.ts",
 <!---
 [comment]: it works with text, you can rename it how you want
 
