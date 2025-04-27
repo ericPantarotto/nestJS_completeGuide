@@ -1270,6 +1270,22 @@ to solve this, in your controller:
 With our mock implementation of the `UsersService` put together, we can now test all the different methods inside of our controller that only use either `find` or `findOne`.
 
 **<span style='color: #8accb3'> Note:** We are testing just the method by itself without any decorators present. If you want to test the decorators, then we have to write out an end to end test, which you'll recall is a very different kind of test.
+
+## **<span style='color: #6e7a73'>Integration Testing**
+
+### **<span style='color: #6e7a73'>Getting started with end to end Testing**
+
+![image info](./_notes/13_sc1.png)
+
+For each end to end test, a new server is created for the test, and the app entirely copied.
+
+**<span style='color: #ff3b3b'>Error:** *Configuration error: Could not locate module src/guards/auth.guard mapped as:*
+
+**<span style='color: #aacb73'> src/test/jest.e2e.json**
+
+```json
+"moduleNameMapper": { "^src/(.*)$": "<rootDir>../src/$1"
+```
 <!---
 [comment]: it works with text, you can rename it how you want
 
