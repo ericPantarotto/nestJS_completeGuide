@@ -1299,7 +1299,7 @@ For each end to end test, a new server is created for the test, and the app enti
 
 During testing, `main.ts` is entirely skipped as well as the cookie-session set-up and the validation pipe.
 
-**<span style='color: #8accb3'> Note:** Below is a bad practise!
+**<span style='color: #8accb3'> Note:** Below is a bad practice!
 
 to solve the easy way this situation we extract in a file these 2 steps, and we can then call it from our test,
 
@@ -1359,6 +1359,13 @@ export class AppModule {
 that code is tucked away inside the `app.module` in a pretty confusing fashion.
 
 it's essentially equivalent to what we had before when we were doing all the setup inside the `main.ts` file. The only big difference is that now cookie-session and validation pipes are going to be wired up whenever we create our application using the `app.module`, and allowing an easier setup of our end-to-end tests
+
+### **<span style='color: #6e7a73'>Solving Failures Around Repeat Test Runs**
+
+We would want each time that our e2e test creates a new instance of `App`, that it also wipes the database, to avoid data leaking in between test runs. we should then have:
+
+- 1 database for development mode,
+- and 1 for testing mode
 <!---
 [comment]: it works with text, you can rename it how you want
 
