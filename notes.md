@@ -1366,6 +1366,25 @@ We would want each time that our e2e test creates a new instance of `App`, that 
 
 - 1 database for development mode,
 - and 1 for testing mode
+
+### **<span style='color: #6e7a73'>Creating Separate Test and Dev Databases**
+
+![image info](./_notes/13_sc3.png)
+
+**<span style='color: #aacb73'> app.module.ts** 1 possible solution:
+
+```typescript
+TypeOrmModule.forRoot({
+  type: 'sqlite',
+  database: process.env.NODE_ENV === 'test' ? 'test.sqlite' : 'db.sqlite',
+  entities: [User, Report],
+  synchronize: true,
+}),
+```
+
+**<span style='color: #8accb3'> Note:** Nest's recommended way of handling environment config is incredibly over-the-top complicated
+
+![image info](./_notes/13_sc4.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
