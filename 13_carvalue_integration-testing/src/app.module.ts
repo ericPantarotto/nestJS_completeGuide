@@ -1,6 +1,7 @@
-import { Module, ValidationPipe } from '@nestjs/common';
+import { MiddlewareConsumer, Module, ValidationPipe } from '@nestjs/common';
 import { APP_PIPE } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import cookieSession from 'cookie-session';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Report } from './reports/report.entity';
@@ -26,4 +27,10 @@ import { UsersModule } from './users/users.module';
   ],
   exports: [TypeOrmModule],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(cookieSession({ keys: ['randomCookieString'] }))
+      .forRoutes('*');
+  }
+}

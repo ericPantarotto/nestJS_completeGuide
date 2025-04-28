@@ -1331,13 +1331,34 @@ We'll move the validation pipe and the cookie-session directly in the `App.modul
 
 ```typescript
 providers: [
-    AppService,
+  AppService,
     { provide: APP_PIPE, useValue: new ValidationPipe({ whitelist: true }) },
   ],
 ```
 
 **<span style='color: #8accb3'> Setup of a Global Pipe:**  whenever we create an instance of our app module, automatically make use of `ValidationPipe` and apply it to every incoming request that flows into our application.
 
+### **<span style='color: #6e7a73'>Applying a Globally Scoped Middleware**
+
+So inside of here we can set up some middleware that will run on every single incoming request.
+
+**<span style='color: #aacb73'> app.module.ts**
+
+```typescript
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(cookieSession({ keys: ['randomCookieString'] }))
+      .forRoutes('*');
+  }
+}
+```
+
+**<span style='color: #8accb3'> Downside of applying global pipe and middleware:** the downside to this approach is that even though we are wiring stuff up and kind of the official *NestJS* way, it's really a lot more challenging to take a glance in one location and understand what pipes or what middlewares we are applying to every single request that flows into our app. Previously, we could see all that stuff very easily from inside of our `main.ts` file.
+
+that code is tucked away inside the `app.module` in a pretty confusing fashion.
+
+it's essentially equivalent to what we had before when we were doing all the setup inside the `main.ts` file. The only big difference is that now cookie-session and validation pipes are going to be wired up whenever we create our application using the `app.module`, and allowing an easier setup of our end-to-end tests
 <!---
 [comment]: it works with text, you can rename it how you want
 
