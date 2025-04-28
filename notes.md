@@ -1294,6 +1294,31 @@ For each end to end test, a new server is created for the test, and the app enti
 - for VSCode Test View, `settings.json` takes only 1 configuration file
   - "jest.jestCommandLine": "npx jest --config test/jest-e2e.json",
   - "jest.jestCommandLine": "npx jest --config jest.config.ts",
+
+### **<span style='color: #6e7a73'> App Setup Issues in Spec Files**
+
+During testing, `main.ts` is entirely skipped as well as the cookie-session set-up and the validation pipe.
+
+**<span style='color: #8accb3'> Note:** Below is a bad practise!
+
+to solve the easy way this situation we extract in a file these 2 steps, and we can then call it from our test, 
+
+**<span style='color: #aacb73'> src/setup-app.ts**
+
+```typescript
+export const setupApp = (app: INestApplication) => {
+  app.use(cookieSession({ keys: ['randomCookieString'] }));
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+    }),
+  );
+};
+```
+
+**<span style='color: #ff3b3b'>Error:**  *expected 201 "Created", got 400 "Bad Request"*, this probably occurs because the user already exist, if you delete an existing user, you have to **write** the changes in SQLite.
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
