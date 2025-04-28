@@ -1,6 +1,5 @@
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
-import { setupApp } from 'src/setup-app';
 import request from 'supertest';
 import { App } from 'supertest/types';
 import { AppModule } from './../src/app.module';
@@ -14,9 +13,6 @@ describe('Authentication System (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
-
-    setupApp(app);
-
     await app.init();
   });
 

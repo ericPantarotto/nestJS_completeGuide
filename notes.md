@@ -1301,7 +1301,7 @@ During testing, `main.ts` is entirely skipped as well as the cookie-session set-
 
 **<span style='color: #8accb3'> Note:** Below is a bad practise!
 
-to solve the easy way this situation we extract in a file these 2 steps, and we can then call it from our test, 
+to solve the easy way this situation we extract in a file these 2 steps, and we can then call it from our test,
 
 **<span style='color: #aacb73'> src/setup-app.ts**
 
@@ -1318,6 +1318,25 @@ export const setupApp = (app: INestApplication) => {
 ```
 
 **<span style='color: #ff3b3b'>Error:**  *expected 201 "Created", got 400 "Bad Request"*, this probably occurs because the user already exist, if you delete an existing user, you have to **write** the changes in SQLite.
+
+### **<span style='color: #6e7a73'>Applying a Globally Scoped Pipe**
+
+![image info](./_notes/13_sc2.png)
+
+We'll move the validation pipe and the cookie-session directly in the `App.module` instead of `main.ts`
+
+**<span style='color: #ff3b3b'>Error:** If you set up stuff from inside the `main.ts` file, validation pipe, cookie-session are not going to be set up for you when you are running end to end tests, though that is the documentation recommendation. that's why we would move it over to inside the app module.
+
+**<span style='color: #aacb73'> app.module.ts**
+
+```typescript
+providers: [
+    AppService,
+    { provide: APP_PIPE, useValue: new ValidationPipe({ whitelist: true }) },
+  ],
+```
+
+**<span style='color: #8accb3'> Setup of a Global Pipe:**  whenever we create an instance of our app module, automatically make use of `ValidationPipe` and apply it to every incoming request that flows into our application.
 
 <!---
 [comment]: it works with text, you can rename it how you want
