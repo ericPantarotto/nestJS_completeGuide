@@ -32,4 +32,33 @@ describe('Authentication System (e2e)', () => {
     expect(id).toBeDefined();
     expect(email_1).toBe(email_1);
   });
+
+  it('/whoami (GET), signup a new user and then get the currently logged in user', async () => {
+    const email = 'user@test.com';
+
+    const res = await request(app.getHttpServer())
+      .post('/auth/signup')
+      .send({ email: email, password: 'test1234' })
+      .expect(201);
+
+    const cookie = res.get('Set-Cookie');
+
+    if (!cookie) {
+      throw new Error('Cookie not found in the response');
+    }
+
+    const response = await request(app.getHttpServer())
+      .get('/auth/whoami')
+      .set('Cookie', cookie)
+      .expect(200);
+
+    // Define the WhoAmIResponse interface
+    interface WhoAmIResponse {
+      email: string;
+    }
+
+    const responseBody: WhoAmIResponse = response.body as WhoAmIResponse;
+    expect(responseBody.email).toBe(email);
+    // expect(responseBody.email).toBe('emailerror@test.com'); //ERROR: simulate a test failure
+  });
 });
