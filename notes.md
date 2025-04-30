@@ -1435,11 +1435,26 @@ when using VSCode Test View, or `npx jest test/* --config test/jest-e2e.json`, t
 
 ```typescript
  it('/signup (POST), handles a signup request', async () => {
-    console.log(process.env.NODE_ENV);
+   console.log(process.env.NODE_ENV);
 // ...
  });
 ```
 
+### **<span style='color: #6e7a73'>Solving a SQLite Error**
+
+**<span style='color: #ff3b3b'>Error:** SQLite Database locked
+
+To solve this problem. We're going to tell just don't try to run our tests in parallel. Just run one test at a time. Now, this might sound like it's going to significantly slow down our tests.
+
+In fact, it's actually the opposite. It turns out that when you're making use of TypeScript with jest together, having tests run in parallel, usually you get actually far, far worse performance
+
+you can set `--maxWorkers=1` if you have such error, otherwise you can live this setup:
+
+`"test:watch": "NODE_ENV=test jest --watch --maxWorkers=0.5",`
+
+### **<span style='color: #6e7a73'> It Works!**
+
+So rather than writing out all this database deleting logic inside of every single `beforeEach`, we're going to instead define a global `beforeEach`. So this will be one single statement that is going to run before every single test in every file of our end to end test suite.
 <!---
 [comment]: it works with text, you can rename it how you want
 

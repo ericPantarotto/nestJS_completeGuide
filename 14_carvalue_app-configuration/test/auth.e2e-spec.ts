@@ -17,7 +17,7 @@ describe('Authentication System (e2e)', () => {
   });
 
   it('/signup (POST), handles a signup request', async () => {
-    console.log(process.env.NODE_ENV);
+    // console.log(process.env.NODE_ENV);
 
     const email = 'anyuser@test.com';
     const res = await request(app.getHttpServer())
