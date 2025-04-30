@@ -1385,6 +1385,23 @@ TypeOrmModule.forRoot({
 **<span style='color: #8accb3'> Note:** Nest's recommended way of handling environment config is incredibly over-the-top complicated
 
 ![image info](./_notes/13_sc4.png)
+
+## **<span style='color: #6e7a73'>Managing App Configuration**
+
+### **<span style='color: #6e7a73'>Understanding Dotenv*
+
+`ConfigService`, we do not have to create ourselves. Instead we are going to install a package that is going to create the config service for us
+
+`npm i @nestjs/config`
+
+Why don't we just use `dotenv` directly? By making use of this extra library of `nestjs/config`, it's just an extra layer of complexity and it's kind of hard to say that it really gives us any defined extra benefit to this entire system.
+
+![image info](./_notes/14_sc1.png)
+
+we're going to take the Nest recommendation. We are going to have more than one different dot env file.
+
+- We're going to have one specifically to be used during development of our application 
+- and one during testing of our application.
 <!---
 [comment]: it works with text, you can rename it how you want
 
