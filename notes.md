@@ -1388,7 +1388,7 @@ TypeOrmModule.forRoot({
 
 ## **<span style='color: #6e7a73'>Managing App Configuration**
 
-### **<span style='color: #6e7a73'>Understanding Dotenv*
+### **<span style='color: #6e7a73'>Understanding Dotenv**
 
 `ConfigService`, we do not have to create ourselves. Instead we are going to install a package that is going to create the config service for us
 
@@ -1400,10 +1400,10 @@ Why don't we just use `dotenv` directly? By making use of this extra library of 
 
 we're going to take the Nest recommendation. We are going to have more than one different dot env file.
 
-- We're going to have one specifically to be used during development of our application 
+- We're going to have one specifically to be used during development of our application
 - and one during testing of our application.
 
-### **<span style='color: #6e7a73'>Applying Dotenv for Config*
+### **<span style='color: #6e7a73'>Applying Dotenv for Config**
 
 `isGlobal: true`, this setting just means that we do not have to re-import the config module all over the place into other modules inside of our project whenever we want to get some config information. Then as a second property `envFilePath`, we're going to put in exactly which of these two files we want to use
 
@@ -1415,6 +1415,31 @@ ConfigModule.forRoot({
   envFilePath: `.env.${process.env.NODE_ENV || 'development'}`,
 }),
 ```
+
+### **<span style='color: #6e7a73'> Specifying the Runtime Environment**
+
+**<span style='color: #aacb73'> package.json**
+
+If you are on anything besides Windows right now, you would normally be able to write out something:
+
+`start:dev": "NODE_ENV=development nest start --watch`,
+
+to cover all operating systems including Windows, `npm i cross-env`
+
+`start": "cross-env NODE_ENV=development nest start`,  
+`start:dev": "cross-env NODE_ENV=development nest start --watch`,
+
+when using VSCode Test View, or `npx jest test/* --config test/jest-e2e.json`, the `process.env.NODE_ENV` variable will automatically be defined as `test` by *NestJS*
+
+**<span style='color: #aacb73'> src/auth.e2e-spec.ts**
+
+```typescript
+ it('/signup (POST), handles a signup request', async () => {
+    console.log(process.env.NODE_ENV);
+// ...
+ });
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
