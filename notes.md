@@ -1402,6 +1402,19 @@ we're going to take the Nest recommendation. We are going to have more than one 
 
 - We're going to have one specifically to be used during development of our application 
 - and one during testing of our application.
+
+### **<span style='color: #6e7a73'>Applying Dotenv for Config*
+
+`isGlobal: true`, this setting just means that we do not have to re-import the config module all over the place into other modules inside of our project whenever we want to get some config information. Then as a second property `envFilePath`, we're going to put in exactly which of these two files we want to use
+
+**<span style='color: #aacb73'> app.module.ts**
+
+```typescript
+ConfigModule.forRoot({
+  isGlobal: true,
+  envFilePath: `.env.${process.env.NODE_ENV || 'development'}`,
+}),
+```
 <!---
 [comment]: it works with text, you can rename it how you want
 
