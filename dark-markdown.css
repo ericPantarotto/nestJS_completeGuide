@@ -1,3 +1,23 @@
 body {
   background-color: #232b2b !important;
 }
+
+pre, code {
+  background-color: #232b2b !important; /* Match the body background color */
+  color: #dcdcdc; /* Set a readable text color */
+  border: none !important; /* Remove any borders */
+  padding: 0 !important; /* Remove extra padding */
+  margin: 0 !important; /* Remove extra margin */
+  box-shadow: none !important; /* Remove any shadows */
+  white-space: pre-wrap !important; /* Ensure proper wrapping */
+  overflow: hidden !important; /* Prevent scrollbars or extra space */
+}
+
+pre {
+  display: block !important; /* Ensure proper block rendering */
+  line-height: 1.5 !important; /* Adjust line height for readability */
+}
+
+code {
+  display: inline-block !important; /* Ensure inline rendering for inline code */
+}

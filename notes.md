@@ -1473,6 +1473,10 @@ The many to one decorator is going to cause a change inside of our database. The
 ### **<span style='color: #6e7a73'>More on Decorators**
 
 **<span style='color: #ffcd58'>IMPORTANT:** Association is not automatically fetched when we fetch a `User`/ `Report`
+
+### **<span style='color: #6e7a73'>Setting up the Association**
+
+![image info](./_notes/15_sc2.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
