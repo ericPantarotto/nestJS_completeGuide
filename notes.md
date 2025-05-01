@@ -1455,6 +1455,17 @@ you can set `--maxWorkers=1` if you have such error, otherwise you can live this
 ### **<span style='color: #6e7a73'> It Works!**
 
 So rather than writing out all this database deleting logic inside of every single `beforeEach`, we're going to instead define a global `beforeEach`. So this will be one single statement that is going to run before every single test in every file of our end to end test suite.
+
+## **<span style='color: #6e7a73'>Relations with TypeORM**
+
+### **<span style='color: #6e7a73'>Types of Associations**
+
+- One-to-one
+- One-to-many // Many-to-one
+- May-to-many
+
+![image info](./_notes/15_sc1.png)
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
