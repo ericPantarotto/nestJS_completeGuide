@@ -1466,6 +1466,9 @@ So rather than writing out all this database deleting logic inside of every sing
 
 ![image info](./_notes/15_sc1.png)
 
+### **<span style='color: #6e7a73'>The ManyToOne and OneToMany Decorators**
+
+The many to one decorator is going to cause a change inside of our database. The opposite decorator, one to many does not cause a change. It's going to be a new column that's going to record the `userId` in table `report`
 <!---
 [comment]: it works with text, you can rename it how you want
 
