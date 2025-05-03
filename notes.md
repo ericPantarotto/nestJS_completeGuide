@@ -1486,6 +1486,17 @@ The many to one decorator is going to cause a change inside of our database. The
 
 ![image info](./_notes/16_sc2.png)
 
+### **<span style='color: #6e7a73'>Middlewares, Guards, and Interceptors**
+
+![image info](./_notes/16_sc3.png)
+
+We have made use of middlewares guards and interceptor interceptors, but we haven't really considered the order in which they execute. Our `AdminGuard` that tests `CurrentUser`, this interceptor is only run later, hence the user will never be defined.
+
+**<span style='color: #ffcd58'>IMPORTANT:** We need to turn this interceptor into a middleware instead, that's going to guarantee that it runs before our request ever goes off into the `AdminGuard`.
+
+**<span style='color: #ff3b3b'>Error:**  be aware of when interceptors run, they are always going to execute **after any middlewares and after any guards**.
+
+So your middlewares and your guards cannot rely upon any information that is created or assigned to a request object inside of the interceptor.
 <!---
 [comment]: it works with text, you can rename it how you want
 
