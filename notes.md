@@ -1477,6 +1477,15 @@ The many to one decorator is going to cause a change inside of our database. The
 ### **<span style='color: #6e7a73'>Setting up the Association**
 
 ![image info](./_notes/15_sc2.png)
+
+## **<span style='color: #6e7a73'>A Basic Permissions System**
+
+### **<span style='color: #6e7a73'>Authorization vs Authentication**
+
+![image info](./_notes/16_sc1.png)
+
+![image info](./_notes/16_sc2.png)
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
