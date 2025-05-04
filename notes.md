@@ -1539,6 +1539,12 @@ We need to look up very certain properties inside the query string and parse wha
 **<span style='color: #ff3b3b'>Error:**
 
 ![image info](./_notes/16_sc4.png)
+
+### **<span style='color: #6e7a73'Transforming Query String Data**
+
+`import {Transform} from 'class-transformer`
+
+This **transform** decorator is going to allow us to receive an incoming value, say a string from the incoming request, and then do some processing on it or transformation on it and allow us to turn that value into some other kind of value before it ever gets assigned and validated on our *DTO*.
 <!---
 [comment]: it works with text, you can rename it how you want
 
