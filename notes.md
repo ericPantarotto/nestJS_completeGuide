@@ -1580,6 +1580,10 @@ We're making sure that we are not sticking in a raw string that is coming from a
 the entire purpose of that `synchronize: true` flag is to make sure that whenever type ORM starts up, it's going to take a look at our different entities. It's going to look at the structure of them and then modify our database to suit exactly the structure of your entities.
 
 This is extremely uncommon behavior. There are very few SQL frameworks out there, not only for TypeScript and JavaScript, but for other languages as well that behave in this manner.
+
+### **<span style='color: #6e7a73'>The Dangers of Synchronize**
+
+![image info](./_notes/18_sc1.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
