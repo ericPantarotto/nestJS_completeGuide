@@ -25,12 +25,6 @@ import { UsersModule } from './users/users.module';
         synchronize: true,
       }),
     }),
-    // TypeOrmModule.forRoot({
-    //   type: 'sqlite',
-    //   database: 'db.sqlite',
-    //   entities: [User, Report],
-    //   synchronize: true,
-    // }),
     UsersModule,
     ReportsModule,
   ],
@@ -42,9 +36,15 @@ import { UsersModule } from './users/users.module';
   exports: [TypeOrmModule],
 })
 export class AppModule {
+  constructor(private configService: ConfigService) {}
+
   configure(consumer: MiddlewareConsumer) {
     consumer
-      .apply(cookieSession({ keys: ['randomCookieString'] }))
+      .apply(
+        cookieSession({
+          keys: [this.configService.get('COOKIE_KEY') || 'randomCookieString'],
+        }),
+      )
       .forRoutes('*');
   }
 }
