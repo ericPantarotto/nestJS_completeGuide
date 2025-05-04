@@ -1590,6 +1590,20 @@ This is extremely uncommon behavior. There are very few SQL frameworks out there
 ![image info](./_notes/18_sc2.png)
 
 ![image info](./_notes/18_sc3.png)
+
+### **<span style='color: #6e7a73'>Headaches with Config Management**
+
+![image info](./_notes/18_sc4.png)
+
+the problem is that `typeORM CLI` whenever we run it to generate a migration file or to apply a migration file, the CLI only will run the code inside of our entity files and the migration files.
+
+The CLI has no idea what NestJS is, what the config module is, what the config service is and doesn't know what is going on inside the app module. But the app module itself is what defines exactly how to connect to our database.
+
+The `TypeORM CLI` just plain has no idea how to get that object right there and how to use it to connect to our database and apply the migration. That is the core issue here.
+
+![image info](./_notes/18_sc5.png)
+
+So what we really have to figure out here is how to define all of our configuration for connecting to our database in one location so that it can be used easily or equally well by either NestJS or the TypeORM CLI
 <!---
 [comment]: it works with text, you can rename it how you want
 
