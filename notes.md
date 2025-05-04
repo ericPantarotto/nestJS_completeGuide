@@ -1584,6 +1584,12 @@ This is extremely uncommon behavior. There are very few SQL frameworks out there
 ### **<span style='color: #6e7a73'>The Dangers of Synchronize**
 
 ![image info](./_notes/18_sc1.png)
+
+### **<span style='color: #6e7a73'>The Theory Behind Migrations**
+
+![image info](./_notes/18_sc2.png)
+
+![image info](./_notes/18_sc3.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
