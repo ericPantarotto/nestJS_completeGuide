@@ -1545,6 +1545,18 @@ We need to look up very certain properties inside the query string and parse wha
 `import {Transform} from 'class-transformer`
 
 This **transform** decorator is going to allow us to receive an incoming value, say a string from the incoming request, and then do some processing on it or transformation on it and allow us to turn that value into some other kind of value before it ever gets assigned and validated on our *DTO*.
+
+## **<span style='color: #6e7a73'QueryBuilders with TypeORM**
+
+### **<span style='color: #6e7a73'Creating a Query Builder**
+
+```typescript
+return await this.repo
+    .createQueryBuilder()
+    .select('*')
+    .getRawMany();
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
