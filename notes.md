@@ -1497,6 +1497,35 @@ We have made use of middlewares guards and interceptor interceptors, but we have
 **<span style='color: #ff3b3b'>Error:**  be aware of when interceptors run, they are always going to execute **after any middlewares and after any guards**.
 
 So your middlewares and your guards cannot rely upon any information that is created or assigned to a request object inside of the interceptor.
+
+### **<span style='color: #6e7a73'>Fixing a Type Definition Error**
+
+A request object defined by *Express* by default does not have a `currentUser` property. We're going to tell *TypeScript* that the request interface, as it is defined by *Express*, now has an additional property of `currentUser`, and it's going to possibly refer to some kind of `User` entity object.
+
+instead of using Express namespace as below, i implemented an interface:
+
+```typescript
+declare global {
+  namespace Express{
+    interface Request{
+      currentUser?: User;
+    }
+  }
+}
+```
+
+**<span style='color: #aacb73'> src/interfaces/request-middleware.interface.ts**
+
+```typescript
+import { User } from 'src/users/user.entity';
+import { SessionInterface } from './session.interface';
+
+export interface RequestWithSession extends Request {
+  session?: SessionInterface;
+  currentUser: User | null;
+}
+```
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
