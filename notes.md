@@ -1540,15 +1540,17 @@ We need to look up very certain properties inside the query string and parse wha
 
 ![image info](./_notes/16_sc4.png)
 
-### **<span style='color: #6e7a73'Transforming Query String Data**
+### **<span style='color: #6e7a73'>Transforming Query String Data**
 
 `import {Transform} from 'class-transformer`
 
 This **transform** decorator is going to allow us to receive an incoming value, say a string from the incoming request, and then do some processing on it or transformation on it and allow us to turn that value into some other kind of value before it ever gets assigned and validated on our *DTO*.
 
-## **<span style='color: #6e7a73'QueryBuilders with TypeORM**
+## **<span style='color: #6e7a73'>QueryBuilders with TypeORM**
 
-### **<span style='color: #6e7a73'Creating a Query Builder**
+### **<span style='color: #6e7a73'>Creating a Query Builder**
+
+![image info](./_notes/17_sc1.png)
 
 ```typescript
 return await this.repo
@@ -1557,6 +1559,19 @@ return await this.repo
     .getRawMany();
 ```
 
+### **<span style='color: #6e7a73'> Writing a Query to Produce the Estimate**
+
+**<span style='color: #8accb3'> Note:** the entire reason that we use this colon syntax in order to kind of substitute in a search parameter is just for security concerns. If you've ever heard of a *SQL injection exploit*, this is exactly how we address a SQL injection exploit.
+
+We're making sure that we are not sticking in a raw string that is coming from an incoming request directly into one of our SQL queries.
+
+```typescript
+.where('LOWER(make) = :make', { make: estimateDto.make.toLowerCase() })
+```
+
+**<span style='color: #8accb3'> Note:** we cannot call `.where()` a second time, it would cancel the first one.
+
+`getOne(), getRawOne(), getMany(), getRawMany()` executes the query.
 <!---
 [comment]: it works with text, you can rename it how you want
 

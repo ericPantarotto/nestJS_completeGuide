@@ -4,7 +4,6 @@ import { User } from 'src/users/user.entity';
 import { Repository } from 'typeorm';
 import { CreateReportDto } from './dtos/create-report.dto';
 import { GetEstimateDto } from './dtos/get-estimate.dto';
-import { ReportDto } from './dtos/report.dto';
 import { Report } from './report.entity';
 
 @Injectable()
@@ -26,13 +25,19 @@ export class ReportsService {
     return this.repo.save(report);
   }
 
-  async createEstimate(estimateDto: GetEstimateDto) {
+  async createEstimate({ make, model, lng, lat, year }: GetEstimateDto) {
     const report = await this.repo
       .createQueryBuilder()
-      .where('LOWER(make) = :make', { make: estimateDto.make.toLowerCase() })
-      .select('*')
-      .getRawMany();
+      .select('AVG(price)', 'price')
+      .where('LOWER(make) = :make', { make: make.toLowerCase() })
+      .andWhere('LOWER(model) = :model', { model: model.toLowerCase() })
+      .andWhere('lng - :lng BETWEEN -5 AND 5', { lng })
+      .andWhere('lat - :lat BETWEEN -5 AND 5', { lat })
+      .andWhere('year - :year BETWEEN -3 AND 3', { year })
+      .orderBy('mileage', 'DESC')
+      .limit(3)
+      .getRawOne<{ price: number }>();
 
-    return report as ReportDto[];
+    return report;
   }
 }
