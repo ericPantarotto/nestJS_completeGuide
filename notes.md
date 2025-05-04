@@ -749,7 +749,7 @@ to test the app, [http://localhost:3000/computer]
 - We have not manually created our database.
 - We have not really set up any rigid structure around our data.
 
-That is because *TypeORM* has a very special feature in it referred to as the `synchronization=true` feature.  This feature right here is only for use in the development environment. This option, when set to true, is going to cause type to take a look at the structure of all your different entities and then automatically update the structure of your database.
+That is because *TypeORM* has a very special feature in it referred to as the `synchronization=true` feature.  This feature is only for use in the development environment. This option, when set to true, is going to cause type to take a look at the structure of all your different entities and then automatically update the structure of your database.
 
 - It's going to create and remove tables.
 - It will add and remove columns and it will change the type of data stored in these columns.
@@ -1572,6 +1572,14 @@ We're making sure that we are not sticking in a raw string that is coming from a
 **<span style='color: #8accb3'> Note:** we cannot call `.where()` a second time, it would cancel the first one.
 
 `getOne(), getRawOne(), getMany(), getRawMany()` executes the query.
+
+## **<span style='color: #6e7a73'> Production Deployment**
+
+### **<span style='color: #6e7a73'> Understanding the Synchronize Flag**
+
+the entire purpose of that `synchronize: true` flag is to make sure that whenever type ORM starts up, it's going to take a look at our different entities. It's going to look at the structure of them and then modify our database to suit exactly the structure of your entities.
+
+This is extremely uncommon behavior. There are very few SQL frameworks out there, not only for TypeScript and JavaScript, but for other languages as well that behave in this manner.
 <!---
 [comment]: it works with text, you can rename it how you want
 
