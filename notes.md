@@ -1526,6 +1526,19 @@ export interface RequestWithSession extends Request {
 }
 ```
 
+### **<span style='color: #6e7a73'>Validating Query String Values**
+
+just as a quick reminder, whenever you send a **query string** inside of a request, all the information inside of here is treated as a string and it is received by our server as a **string**. It's not going to be parsed automatically.
+
+at some point in time during our request lifecycle, we need to take a look at this query
+
+string.
+
+We need to look up very certain properties inside the query string and parse whatever values are given from a string into a number.
+
+**<span style='color: #ff3b3b'>Error:**
+
+![image info](./_notes/16_sc4.png)
 <!---
 [comment]: it works with text, you can rename it how you want
 
