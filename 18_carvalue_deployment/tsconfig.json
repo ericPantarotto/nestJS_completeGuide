@@ -20,5 +20,5 @@
     "esModuleInterop": true,
     "allowJs": true
   },
-  "include": ["src/**/*", "test/**/*", "migrations/**/*", "ormconfig.js"]
+  "include": ["src/**/*", "test/**/*"]
 }

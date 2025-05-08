@@ -1,5 +1,7 @@
 import { DataSource } from 'typeorm';
 
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+
 const dbConfig = {
   synchronize: false,
   migrations: ['dist/migrations/*.js'],

@@ -60,3 +60,6 @@ dist/
 
 # dotenv
 .env.*
+
+# sqlite
+*.sqlite
