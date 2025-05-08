@@ -1604,6 +1604,51 @@ The `TypeORM CLI` just plain has no idea how to get that object right there and 
 ![image info](./_notes/18_sc5.png)
 
 So what we really have to figure out here is how to define all of our configuration for connecting to our database in one location so that it can be used easily or equally well by either NestJS or the TypeORM CLI
+
+### Various notes
+
+#### migrations should be saved under src folder
+
+`npm run typeorm  migration:generate ./src/migrations/initial-schema`
+
+`npm run build` before running `npm run typeorm migration:run` as we have defined in the `src/ormconfig.js` to use `dist/migrations`
+
+**<span style='color: #ffc5a6'>TypeORM Migrations Guide:** <https://orkhan.gitbook.io/typeorm/docs/migrations>
+
+#### devDependencies failing heroku deploy
+
+error message in heroku using `heroku logs --tail` `sh 1: nest not found` were coming from *devDependencies*, probably *ts-node* which had to be prmoted to production *dependencies*
+
+#### Heroku CLI - Ubuntu
+
+**<span style='color: #ffc5a6'>Heroku CLI dev-center:** <https://devcenter.heroku.com/articles/heroku-cli#install-with-ubuntu-debian-apt-get>
+
+`curl <https://cli-assets.heroku.com/install-ubuntu.sh> | sh`
+
+#### Heroku Project
+
+`heroku login`
+
+`heroku auth:whoami`
+
+`heroku create`
+
+`heroku addons:create heroku-postgresql:hobby-dev --help`  
+`heroku addons:create heroku-postgresql:essential-0 --app=intense-harbor-02248`
+
+`heroku config:set COOKIE_KEY=randomCookieString --app=intense-harbor-02248`  
+`heroku config:set NODE_ENV=production --app=intense-harbor-02248`
+
+#### Adding Heroku Git repository to an existing project
+
+**<span style='color: #ffc5a6'>Heroku Repo:** <https://devcenter.heroku.com/articles/git#for-an-existing-app>
+
+#### Testing
+
+`npm run typeorm migration:run`
+
+`npx jest --config jest.config.ts`
+
 <!---
 [comment]: it works with text, you can rename it how you want
 
